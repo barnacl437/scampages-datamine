@@ -11,11 +11,12 @@ my early effort on scraping and archiving scam, fake or disguising websites, esp
 ### What'll be inside
 I plan to scrape pretty anything I could put into, maybe a zip packing the whole website content, extracting shady js files from sus requests, or pretty much more things, neatly organised to each properly-named folders. For more, please look around at the repo.
 
-### contribution
-any effort to help make this more complete are generally appreciated! Although I can always make some works done myself. As of now it's fairly simple: just open up your browser's devtool (F12 or Ctrl-Shift-I), navigate to network, refresh the page and select filter by filetype, like this, for example, it is filtered to show only css files:
+### How efforts are done
+For now I can always make all works done myself in this repo. The method I use to collect websites' datas is fairly simple: just open up your browser's devtool (F12 or Ctrl-Shift-I), navigate to network, refresh the page and select filter by filetype, like this, for example, it is filtered to show only css files:
 
 ![image](https://github.com/user-attachments/assets/e089a556-3d63-4a58-9e59-123f98f673c7)
 
+Then right click an item and there are some save to file options. You can choose to save to a single file using the option `Save response as`. 
 
 
 ### ...anything else?
