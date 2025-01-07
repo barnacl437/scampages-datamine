@@ -22,7 +22,7 @@ Then right click an item and there are some save to file options. You can choose
 ### ...anything else?
 There are various scam shits around on the interwebz. I am still trying to detect and scraping their contents thru many sources, commonly via discord chats or steam pm where some jerks asked me to vote for their team on match.tf lol. You can notice suspicious links to such websites by seeing the root url be messed up to disguise the real thing. Open it in incognito/private mode or any browsers you don't use on productivity work machines for extra safety.
 
-I also have an Internet Archive account where I save what I've found. I've been saving since at least 2021, so how much I've done on here will also have stuff on IArchive taken part in. If you're catching some curiousity right now, you can view my web archive [here](https://archive.org/details/@barnacle555/web-archive). 
+I also have an Internet Archive account where I save what I've found. I've been saving since at least 2021, so how much I've done on here will also have stuff on IArchive taken part in. My plan right now is to import an amount of websites I archived in the past few years on IA. If it catches some of your curiousity right now, you can view my web archive [here](https://archive.org/details/@barnacle555/web-archive). 
 
 ### licence
 You are free to use, reproduce, redistribute or modify any non-copyrighted materials used in this repository, such as trivial js codes and website templates (if any). The licence doesn't recommend you to sell them and can ask you to use it rationally and ethically as if it would bring benefits to both yourself and people in general.
