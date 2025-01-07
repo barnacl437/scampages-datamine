@@ -5,6 +5,8 @@ my early effort on scraping and archiving scam, fake or disguising websites, esp
 > You can learn what's inside and freely distribute non-copyrights materials. This repo, ditto however, has copyrighted materials that belong to their respective owners. I am neither responsible nor relating to anything regarding creation of these materials. Caveat emptor.
 >
 >  **Do not** use this for further scamming attempts. Your actions shall be ruining people's life, therefore if you are thinking about doing so, the world will tell you to halt.
+>
+> This project is inspired by [Discord Datamining](https://github.com/Discord-Datamining/Discord-Datamining). I am quite moved by their attempt to log and dump JS files to seek changes per every discord client update, so I just recreated this idea for a more, or less, other purpose.
 
 ### What'll be inside
 I plan to scrape pretty anything I could put into, maybe a zip packing the whole website content, extracting shady js files from sus requests, or pretty much more things, neatly organised to each properly-named folders. For more, please look around at the repo.
