@@ -10,6 +10,6 @@ You should sort different kinds of data into their own folders named with their 
 
 ![image](https://github.com/user-attachments/assets/512a1d30-fad8-4f30-8b71-1e9f6a85dac8)
 
-For subfolder levelling preserved from those websites, add a _ (dash) to the end of folder name (such as `terny_`).
+For subfolder levels preserved from those websites, add a _ (dash) to the end of folder name (such as `terny_`).
 
 
