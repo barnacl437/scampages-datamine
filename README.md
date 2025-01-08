@@ -5,6 +5,7 @@ my early effort on scraping and archiving scam, fake or disguising websites, esp
 > You can learn what's inside and freely distribute non-copyrights materials. This repo, ditto however, may in some chances has copyrighted materials that belong to their respective owners. I am neither responsible nor relating to anything regarding creation of these materials. Caveat emptor.
 >
 >  **Do not** use this for further scamming attempts. Your actions shall be ruining people's life, therefore if you are thinking about doing so, the world will tell you to halt.
+> Also, you should *never* be fallen for these scams and remember to stay safe when browsing online.
 >
 > This project is inspired by [Discord Datamining](https://github.com/Discord-Datamining/Discord-Datamining). I am quite moved by their attempt to log and dump JS files to seek changes per every discord client update, so I just recreated this idea for a more, or less, other purpose.
 
@@ -20,7 +21,8 @@ Then right click an item and there are some save to file options. You can choose
 
 
 ### ...anything else?
-There are various scam shits around on the interwebz. I am still trying to detect and scraping their contents thru many sources, commonly via discord chats or steam pm where some jerks asked me to vote for their team on match.tf lol. You can notice suspicious links to such websites by seeing the root url be messed up to disguise the real thing. Open it in incognito/private mode or any browsers you don't use on productivity work machines for extra safety.
+There are various scam shits around on the interwebz. I am still trying to detect and scraping their contents thru many sources, commonly via discord chats or steam pm where some jerks asked me to vote for their team on match.tf lol. 
+See this as a hall of shame for every scamming attempts. 
 
 I also have an Internet Archive account where I save what I've found. I've been saving since at least 2021, so how much I've done on here will also have stuff on IArchive taken part in. My plan right now is to import an amount of websites I archived in the past few years on IA. If it catches some of your curiousity right now, you can view my web archive [here](https://archive.org/details/@barnacle555/web-archive). 
 
