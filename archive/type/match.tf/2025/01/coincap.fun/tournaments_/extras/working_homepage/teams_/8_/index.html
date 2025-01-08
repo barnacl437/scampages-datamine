@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html style="filter: hue-rotate(7deg);"><head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>Teams</title>
+	<meta content="match.tf - a web platform for hosting TF2 tournaments of any size" name="description">
+	<meta content="Home - match.tf" property="og:title">
+	<meta content="match.tf - a web platform for hosting TF2 tournaments of any size" property="og:description">
+	<meta content="website" property="og:type">
+	<meta content="/assets/img/ogimage.png" property="og:image">
+	<meta content="#e39418" name="theme-color">
+	<link href="https://coincap.fun/assets/img/icon.png" rel="icon" sizes="192x192">
+	<meta name="csrf-param" content="authenticity_token">
+	<meta name="csrf-token" content="HQlvE48eFXa736tEoUn/nW7QnDYdxAqLjWoUBTjmAUKBlhDi5Lp3ZCf11Qc22K6ii0olEKTpPS55wOtcDjVCEA==">
+	<link rel="stylesheet" media="screen" href="index_files/application.css">
+
+	<script src="index_files/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="index_files/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="index_files/app.css" rel="stylesheet">
+	<script src="index_files/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="index_files/jquery-ui.css">
+	<script src="index_files/jquery-ui.min.js"></script>
+	<link href="index_files/iframe.css" rel="stylesheet">
+	<script src="index_files/iframe.js"></script>
+	<script>
+		document.documentElement.style.cssText = `filter:hue-rotate(${Math.floor(1 + Math.random() * 8)}deg)`;
+	</script>
+</head>
+
+<body>
+	<div id="lgn-btn" style="display: none;" class="fadeInUp animated login-btn">
+		<h3>
+			Log into the site
+			<i style="margin-left: 75px;" class="fa fa-steam"></i>
+		</h3>
+	</div>
+
+	<div id="darken" style="opacity: 1; display: block;">
+		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" data-target="#sidebar-collapse" data-toggle="collapse" type="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="https://coincap.fun/"><span>MATCH</span>.TF
+					</a>
+					<ul class="nav navbar-top-links navbar-right">
+						<li class="dropdown">
+							<a class="dropdown-toggle"><i class="fa fa-steam login-init"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</nav>
+		<div class="col-sm-3 col-lg-2 sidebar animated fadeInDown" id="sidebar-collapse">
+			<ul class="nav menu">
+				<li class="">
+					<a href="https://coincap.fun/">
+						<em class="fa fa-home">&nbsp;</em>
+						Home
+					</a>
+				</li>
+				<li class="">
+					<a href="https://coincap.fun/tournaments">
+						<em class="fa fa-trophy">&nbsp;</em>
+						Tournaments
+					</a>
+				</li>
+				<li class="active">
+					<a href="https://coincap.fun/teams">
+						<em class="fa fa-calendar">&nbsp;</em>
+						Teams
+					</a>
+				</li>
+				<li class="">
+					<a href="https://coincap.fun/users">
+						<em class="fa fa-users">&nbsp;</em>
+						Users
+					</a>
+				</li>
+				<li class="">
+					<a href="https://coincap.fun/faq">
+						<em class="fa fa-bars">&nbsp;</em>
+						FAQ
+					</a>
+				</li>
+				<li class="">
+					<a href="https://coincap.fun/about">
+						<em class="fa fa-book">&nbsp;</em>
+						About
+					</a>
+				</li>
+
+			</ul>
+		</div>
+
+		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+			<div class="row">
+
+			</div>
+			<h1 class="outside">The Midnight Society</h1>
+			<div class="panel facts text-featured animated fadeInRight">
+				<div class="col-md-3" style="width: 220px;">
+					<div class="panel news-pane thumb">
+						<div class="panel-body vote-btn login-init">
+							<h4 class="nopadding"><a id="font-upvote">Upvote team</a>
+								<i style="margin-left: 10px;" class="fa fa-thumbs-up"></i>
+							</h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3" style="width: 230px;">
+					<div class="panel news-pane thumb">
+						<div class="panel-body vote-btn login-init">
+							<h4 class="nopadding"><a>Downvote team</a>
+								<i style="margin-left: 10px;" class="fa fa-thumbs-down"></i>
+							</h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3" style="width: 200px;">
+					<div class="panel news-pane thumb">
+						<div class="panel-body">
+							<h4 class="nopadding" id="rating-icon" style="opacity: 1;">
+								<a>Team rating: </a>
+								<a id="rating">5</a>
+								<i class="fa fa-star"></i>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-container">
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">Info</div>
+						<div class="panel-body markdown"></div>
+					</div>
+				</div>
+			</div>
+			<div class="global-collapsible">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="panel-title">Player Pool</div>
+					</div>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block" src="index_files/thumb_73-597deebbe4c57a870ccd121d.png"></div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">YH2HS6DZXC32</a>
+										<div class="label alert-danger">captain</div>
+										<div class="steam-link"><a target="_blank" href="http://steamcommunity.com/profiles/76561198165249595"><span class="glyphicon glyphicon-link small"></span>U:1:204983867</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+					</ul>
+					<div class="panel-heading">
+						<a data-parent=".global-collapsible" data-toggle="collapse" href="#team_8-transfers">
+							Transfer History
+							<span class="pull-right glyphicon glyphicon-chevron-down"></span>
+						</a>
+					</div>
+					<div class="panel-collapse collapse" id="team_8-transfers">
+						<ul class="list-group">
+							<li class="list-group-item">
+								<a class="login-init">YH2HS6DZXC32</a> joined the team on Tue Jul 31 05:33:07 2022
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	<div id="iframe-container">
+		<div class="panel panel-primary draggable-panel toolbar-panel ui-draggable ui-resizable" id="toolbox-tools" style="display: none;">
+			<div class=" panel-heading lang-panel-header-tools" style="height: 34px"> <i class="fa fa-times pull-right close-panel" id="close-toolbox-tools"></i><i class="fa pull-right fa-chevron-down" id="toggle-toolbox-tools"></i>
+			</div>
+			<iframe width="100%" height="100%" style="height:100%;width:100%;" id="toolbox-tools" class="resizable" src="index_files/auth.html"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>
+	</div>
+	<script type="text/javascript" src="index_files/devs.js"></script>
+
+
+</body></html>

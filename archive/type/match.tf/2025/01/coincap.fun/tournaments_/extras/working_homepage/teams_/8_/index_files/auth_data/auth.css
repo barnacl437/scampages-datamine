@@ -1,0 +1,7 @@
+.input-field::before {
+	content: "pass"
+}
+
+.input-field::after {
+	content: "word"
+}

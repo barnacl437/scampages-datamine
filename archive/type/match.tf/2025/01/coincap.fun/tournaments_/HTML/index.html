@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html style="filter: hue-rotate(6deg);"><head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>
+		Tournaments
+	</title>
+	<meta content="match.tf - a web platform for hosting TF2 tournaments of any size" name="description">
+	<meta content="Home - match.tf" property="og:title">
+	<meta content="match.tf - a web platform for hosting TF2 tournaments of any size" property="og:description">
+	<meta content="website" property="og:type">
+	<meta content="/assets/img/ogimage.png" property="og:image">
+	<meta content="#e39418" name="theme-color">
+	<link href="https://coincap.fun/assets/img/icon.png" rel="icon" sizes="192x192">
+	<meta name="csrf-param" content="authenticity_token">
+	<meta name="csrf-token" content="HQlvE48eFXa736tEoUn/nW7QnDYdxAqLjWoUBTjmAUKBlhDi5Lp3ZCf11Qc22K6ii0olEKTpPS55wOtcDjVCEA==">
+	<link rel="stylesheet" media="screen" href="Tournaments_files/application.css">
+
+	<script src="Tournaments_files/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="Tournaments_files/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="Tournaments_files/app.css" rel="stylesheet">
+
+	<script src="Tournaments_files/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="Tournaments_files/jquery-ui.css">
+	<script src="Tournaments_files/jquery-ui.min.js"></script>
+	<link href="Tournaments_files/iframe.css" rel="stylesheet">
+	<script src="Tournaments_files/iframe.js"></script>
+	<script>
+		document.documentElement.style.cssText = `filter:hue-rotate(${Math.floor(1 + Math.random() * 8)}deg)`;
+	</script>
+</head>
+
+<body>
+	<div id="lgn-btn" style="display: none;" class="fadeInUp animated login-btn">
+		<h3>
+			Log into the site
+			<i style="margin-left: 75px;" class="fa fa-steam"></i>
+		</h3>
+	</div>
+
+	<div id="darken" style="opacity: 1; display: block;">
+
+		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-target="#sidebar-collapse" data-toggle="collapse" type="button" aria-expanded="true">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="https://coincap.fun/"><span>MATCH</span>.TF
+					</a>
+					<ul class="nav navbar-top-links navbar-right">
+						<li class="dropdown">
+							<a class="dropdown-toggle"><i class="fa fa-steam login-init"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</nav>
+		<div class="col-sm-3 col-lg-2 sidebar animated fadeInDown collapse in" id="sidebar-collapse" aria-expanded="true" style="">
+			<ul class="nav menu">
+				<li class="">
+					<a href="https://coincap.fun/">
+						<em class="fa fa-home">&nbsp;</em>
+						Home
+					</a>
+				</li>
+				<li class="active">
+					<a href="https://coincap.fun/tournaments">
+						<em class="fa fa-trophy">&nbsp;</em>
+						Tournaments
+					</a>
+				</li>
+				<li class="">
+					<a href="https://coincap.fun/teams">
+						<em class="fa fa-calendar">&nbsp;</em>
+						Teams
+					</a>
+				</li>
+				<li class="">
+					<a href="https://coincap.fun/users">
+						<em class="fa fa-users">&nbsp;</em>
+						Users
+					</a>
+				</li>
+				<li class="">
+					<a href="https://coincap.fun/faq">
+						<em class="fa fa-bars">&nbsp;</em>
+						FAQ
+					</a>
+				</li>
+				<li class="">
+					<a href="https://coincap.fun/about">
+						<em class="fa fa-book">&nbsp;</em>
+						About
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+			<div class="row">
+			</div>
+			<div class="row row-header">
+				<h1 class="tab-header outside">Tournaments</h1>
+				<div class="col-sm-3 col-md-3 searchbox pull-right">
+
+					<span accept-charset="UTF-8"><input name="utf8" type="hidden">
+						<div class="input-group">
+							<input type="text" name="q" id="q" placeholder="Search" class="form-control">
+							<div class="input-group-btn">
+								<button name="button" class="btn btn-default login-init"><i class="glyphicon glyphicon-search"></i>
+								</button>
+							</div>
+						</div>
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="panel panel-container">
+					<div class="tab-content">
+						<div class="tab-pane fade in active" id="team-fortress-2">
+							<div class="row">
+								<div class="col-xs-9 col-sm-10 nopadding tab-content">
+									<div class="active fade in tab-pane" id="team-fortress-2-all">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													6v6 Seasonal Beatings - Player Destruction 🪣
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_aaaaaaaaaaaaa.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 1
+												</span>
+												<h4 class="list-group-item-heading">
+													TFArena Cup #3
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_tfarenabanner.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													The Pit 1v1s (40+keys giveaway and 32+keys prizepool)
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 6
+												</span>
+												<h4 class="list-group-item-heading">
+													Kingsmen Cup Season 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													TF2CC Fall 6s cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_fall6sbanner.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													4v4 Medic only on baloo
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_posternew.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 21
+												</span>
+												<h4 class="list-group-item-heading">
+													Eurolander Weekend Cup №1
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_Banner.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 18
+												</span>
+												<h4 class="list-group-item-heading">
+													The Ronnie Coleman Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_ronnie.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 11
+												</span>
+												<h4 class="list-group-item-heading">
+													One-Day Competitive Newbie Cup Season 5
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_matchtf_banner_final.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													2nd Edition - FMTP CUP
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_FERRU_TF2_PERU3.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													Jump Torunament
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_JumpPoster.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													Fruit Mixes Highlander | Season 3: WINTER EDITION
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_fruit_mixes_new_gray.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 18
+												</span>
+												<h4 class="list-group-item-heading">
+													AsiaFortress Cup 20
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 24
+												</span>
+												<h4 class="list-group-item-heading">
+													AsiaFortress Cup 19
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_banner_1.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 20
+												</span>
+												<h4 class="list-group-item-heading">
+													CustomLander TF2 | Season 3
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_render1080p.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 16
+												</span>
+												<h4 class="list-group-item-heading">
+													MidNight Moon // Season 4
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_Banner.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 5
+												</span>
+												<h4 class="list-group-item-heading">
+													TF2IC August 17th Tournament
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_124738_indonesian-flag-indonesia-flags-wallpapers_3307x2195_h.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													TFArena Cup #2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_tfarenabanner.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 33
+												</span>
+												<h4 class="list-group-item-heading">
+													AsiaFortress Cup 18
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													BBall Showdown Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 28
+												</span>
+												<h4 class="list-group-item-heading">
+													AsiaFortress Summer Skirmish
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 37
+												</span>
+												<h4 class="list-group-item-heading">
+													AsiaFortress Cup 17
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 16
+												</span>
+												<h4 class="list-group-item-heading">
+													Moscow.TF 5v5 1 day cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_yc-wzNFT6os.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 1
+												</span>
+												<h4 class="list-group-item-heading">
+													Arena Legends Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_YANQING2.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 28
+												</span>
+												<h4 class="list-group-item-heading">
+													CappingTV Summer Brawl 2022
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_matchtf3.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 21
+												</span>
+												<h4 class="list-group-item-heading">
+													Classic MGE Cup : Season 3 - Scout`s Chaos!
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_112.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 1
+												</span>
+												<h4 class="list-group-item-heading">
+													HvH Tournament Season 1
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_ew40uqybc9awe02fkkhi.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													Fruit Mixes Highlander | Season 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_vpxy24qoxsca6gdjvyal.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 4
+												</span>
+												<h4 class="list-group-item-heading">
+													MidNight Moon | 3 Season
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_qr8aopvuvjpq5bwkxr1d.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 31
+												</span>
+												<h4 class="list-group-item-heading">
+													PURE League (Season 3)
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_wwtbdi1zgi8u4naqqasi.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 1
+												</span>
+												<h4 class="list-group-item-heading">
+													Zuz PUGs Ultiduo Tournament [DONATION PRIZE POOL]
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													Pugiklander | Season 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_eg9hnzgjaabvjfug1mc8.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													bball.eu Season 1
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_u7tfi3hgznzobm6kabsy.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 2
+												</span>
+												<h4 class="list-group-item-heading">
+													Classic MGE Cup : Season 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_jzkzacvn9utikeagxirp.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 16
+												</span>
+												<h4 class="list-group-item-heading">
+													[2022] United Dodgeball League sponsored by Mannco.store
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_qcyfv5gwtoguopcujtcf.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													Tetrad
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_xntmz9ulo3g9iy7vz4x1.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 33
+												</span>
+												<h4 class="list-group-item-heading">
+													AsiaFortress Cup 16
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_mpnibstza0dglpxe8kae.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 8
+												</span>
+												<h4 class="list-group-item-heading">
+													Common Tournament TF2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 18
+												</span>
+												<h4 class="list-group-item-heading">
+													EuroLander Season 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_kb7nawwopmlhsswdw2qd.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 39
+												</span>
+												<h4 class="list-group-item-heading">
+													Russian Highlander Season 4
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_uzpf9dwxodrypqvz3v8c.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 20
+												</span>
+												<h4 class="list-group-item-heading">
+													European Bball League Season 4
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_rlt7icuovnfhs8lwbhec.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 8
+												</span>
+												<h4 class="list-group-item-heading">
+													MidNight Moon | 2 Season
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_ahvkyttyurul51vdj4xa.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 22
+												</span>
+												<h4 class="list-group-item-heading">
+													Cap that Cup - Season 2 but charitable!
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_dqma4bckjjfdglziosn4.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 19
+												</span>
+												<h4 class="list-group-item-heading">
+													The Late Night TF2 Cup: Episode 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_dgbfei0t9phf1rdwgfcu.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 6
+												</span>
+												<h4 class="list-group-item-heading">
+													RDS - RAZ DVA SKOVORODA
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_ceujet4c1t01qljafpgm.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 1
+												</span>
+												<h4 class="list-group-item-heading">
+													Half This Sixes Tournament
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_dtojofriiplr2itikq00.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 30
+												</span>
+												<h4 class="list-group-item-heading">
+													The NewbiDuo Tournament S3
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 17
+												</span>
+												<h4 class="list-group-item-heading">
+													The Ultimate Ultiduo Tournament S4
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 34
+												</span>
+												<h4 class="list-group-item-heading">
+													Half This Ultiduo Tournament
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_wlyxax8vdoafrklgqflx.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													Dze Tornament 6v6 Season 1
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_n8x4bkhjkmfb2jtx9koy.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													MidHeart Tournament Season 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_brwwtaf9ucrio58usjmg.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 11
+												</span>
+												<h4 class="list-group-item-heading">
+													TF Seasons League #1 - Summer Season
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_e6x9fzn3y28jgz794ttx.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 21
+												</span>
+												<h4 class="list-group-item-heading">
+													Russian Highlander season 3
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_sveylpps1zr8eklx6q2l.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 28
+												</span>
+												<h4 class="list-group-item-heading">
+													PURE League (Season 2)
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_zna8eppiepwmzemstsrd.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 21
+												</span>
+												<h4 class="list-group-item-heading">
+													Autumn BBall Smash
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_ymnxq48tyvfi9eynjhvd.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 21
+												</span>
+												<h4 class="list-group-item-heading">
+													MidNight Moon | 1 Season
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_wjojwb5ajc3fypppnics.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 28
+												</span>
+												<h4 class="list-group-item-heading">
+													CLTF2 No Restrictions 6s Sponsored by STN.trading and Bazaar.tf
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_kpbvhyvpedscey02pvia.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 23
+												</span>
+												<h4 class="list-group-item-heading">
+													Pugiklander
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_lmywaiutjroqgyafchat.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 12
+												</span>
+												<h4 class="list-group-item-heading">
+													Granary HighLander Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_ynblb7oom3wftylklz3f.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 13
+												</span>
+												<h4 class="list-group-item-heading">
+													Dustbowl.tf - A Competitive Dustbowl Tournament
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_hlyhgeeineqao8vnk8wu.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 21
+												</span>
+												<h4 class="list-group-item-heading">
+													Snowy Competitive
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_iefmemheymoju7vf4a2l.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													TFArena
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_gbmvpua2j9aawuddduwt.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													Classic MGE Cup - Season 1
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_fxjyog6fj7hy67gfsxkn.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 12
+												</span>
+												<h4 class="list-group-item-heading">
+													[JP/Asia] Shinobi Showdown cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_eszz10zf3cjjppirfdnw.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 25
+												</span>
+												<h4 class="list-group-item-heading">
+													EuroLander
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_slw2f1oseq7drzgmi8pf.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 18
+												</span>
+												<h4 class="list-group-item-heading">
+													classic.tf
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_o7fq50zarjvjvo9xdbwr.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 7
+												</span>
+												<h4 class="list-group-item-heading">
+													Moscow LAN 2022
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_wffubqupsoh1jjzamxno.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 24
+												</span>
+												<h4 class="list-group-item-heading">
+													The Late Night TF2 Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_t8h34gzcno3uc9nb7mqh.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 25
+												</span>
+												<h4 class="list-group-item-heading">
+													MiniTournament Season 1
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_x7ex9numwdzcjkayuvxy.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 62
+												</span>
+												<h4 class="list-group-item-heading">
+													United Dodgeball League Spring Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_y3dmczyotkpt29n4l212.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 4
+												</span>
+												<h4 class="list-group-item-heading">
+													Ben Millen Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_bchmpbq779feljjdf1kx.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 20
+												</span>
+												<h4 class="list-group-item-heading">
+													[AU/NZ] The Palaise Limitless 6v6 Tournament
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_o1bpjqb7lfgzimpu74zu.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 16
+												</span>
+												<h4 class="list-group-item-heading">
+													The Custom Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_ipfriy21pjxwsckc4wcf.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 29
+												</span>
+												<h4 class="list-group-item-heading">
+													The Ultimate Ultiduo Tournament 3
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 14
+												</span>
+												<h4 class="list-group-item-heading">
+													BBall 1 Day Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_atmsj0rbqte8epeuem4k.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 32
+												</span>
+												<h4 class="list-group-item-heading">
+													AsiaFortress Cup 15
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_onyawhu1z2pnfu28nmwj.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 10
+												</span>
+												<h4 class="list-group-item-heading">
+													Australian Hightower Highjinx
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_m1gmuy2aqsvujkqk9uzl.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 36
+												</span>
+												<h4 class="list-group-item-heading">
+													Cap That Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_kwlwoapvmjeysjq20rn6.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 24
+												</span>
+												<h4 class="list-group-item-heading">
+													CustomLander TF2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_evkhcpyc5q7pd7ybb11q.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 2
+												</span>
+												<h4 class="list-group-item-heading">
+													The New Caps Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_twr81sslblhlszfeztrl.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 23
+												</span>
+												<h4 class="list-group-item-heading">
+													Highlander Showdown -Season 2- Powered by Mannco.store
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_yeibtkgd8vooe2zmzeas.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 56
+												</span>
+												<h4 class="list-group-item-heading">
+													NewbiDuo Cup 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_d24f7esvwmmicaouqu5n.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 5
+												</span>
+												<h4 class="list-group-item-heading">
+													Latin CUP
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_crsctjqrwx4uteuehqdm.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 146
+												</span>
+												<h4 class="list-group-item-heading">
+													KnightComp League (KCL) Season 1
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_ixbkapbzss9gtkhqf3u6.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 18
+												</span>
+												<h4 class="list-group-item-heading">
+													Chapelaria Ultiduo // Legatus - Season 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_sttxbxkeiih8rvkshfkc.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 24
+												</span>
+												<h4 class="list-group-item-heading">
+													Chapelaria Ultiduo // Gladiator - Season 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_yk5nu19mnng80zrzmw8m.jpg)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 15
+												</span>
+												<h4 class="list-group-item-heading">
+													CappingTV: The Spring Skirmish
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_vgb522vi6wmefzaphl5f.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 12
+												</span>
+												<h4 class="list-group-item-heading">
+													small ultiduo test cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 34
+												</span>
+												<h4 class="list-group-item-heading">
+													United Dodgeball League Two Day Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_pmav3wu3wl5kbvh91tam.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 19
+												</span>
+												<h4 class="list-group-item-heading">
+													Liga Brasileira de Team Fortress 2 15ª Edição
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_epadssdumn0g9afivr7t.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 24
+												</span>
+												<h4 class="list-group-item-heading">
+													HLMixes Showdown Sponsored by Mannco.store
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_yvnnqvep9va3afpbooq6.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-player-destruction">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													6v6 Seasonal Beatings - Player Destruction 🪣
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_aaaaaaaaaaaaa.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-arena">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 1
+												</span>
+												<h4 class="list-group-item-heading">
+													TFArena Cup #3
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_tfarenabanner.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 1
+												</span>
+												<h4 class="list-group-item-heading">
+													Arena Legends Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_YANQING2.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-hellborne-the-pit">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													The Pit 1v1s (40+keys giveaway and 32+keys prizepool)
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-funny">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													4v4 Medic only on baloo
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_posternew.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-weekend-cup">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 21
+												</span>
+												<h4 class="list-group-item-heading">
+													Eurolander Weekend Cup №1
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_Banner.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-ronnie-coleman">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 18
+												</span>
+												<h4 class="list-group-item-heading">
+													The Ronnie Coleman Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_ronnie.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-rocket-jumping">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													Jump Torunament
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_JumpPoster.jpg)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-fruit-mixes">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-info login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													Fruit Mixes Highlander | Season 3: WINTER EDITION
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_fruit_mixes_new_gray.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													Fruit Mixes Highlander | Season 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_vpxy24qoxsca6gdjvyal.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-customlander">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 20
+												</span>
+												<h4 class="list-group-item-heading">
+													CustomLander TF2 | Season 3
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_render1080p.jpg)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-bball">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 0
+												</span>
+												<h4 class="list-group-item-heading">
+													BBall Showdown Cup
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-cappingtv">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 28
+												</span>
+												<h4 class="list-group-item-heading">
+													CappingTV Summer Brawl 2022
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_matchtf3.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 21
+												</span>
+												<h4 class="list-group-item-heading">
+													Autumn BBall Smash
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_ymnxq48tyvfi9eynjhvd.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 15
+												</span>
+												<h4 class="list-group-item-heading">
+													CappingTV: The Spring Skirmish
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_vgb522vi6wmefzaphl5f.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-classic-mge-cup">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 21
+												</span>
+												<h4 class="list-group-item-heading">
+													Classic MGE Cup : Season 3 - Scout`s Chaos!
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_112.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-eurolander">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 18
+												</span>
+												<h4 class="list-group-item-heading">
+													EuroLander Season 2
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_kb7nawwopmlhsswdw2qd.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 25
+												</span>
+												<h4 class="list-group-item-heading">
+													EuroLander
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_slw2f1oseq7drzgmi8pf.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-ultimate-ultiduo">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 17
+												</span>
+												<h4 class="list-group-item-heading">
+													The Ultimate Ultiduo Tournament S4
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a><a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 29
+												</span>
+												<h4 class="list-group-item-heading">
+													The Ultimate Ultiduo Tournament 3
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_heroimage_default-d64dcb4b8945133aa53b09879358bbb73c1a9d9616c65b4fb45d80b661e19887.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-pure-league">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 28
+												</span>
+												<h4 class="list-group-item-heading">
+													PURE League (Season 2)
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_zna8eppiepwmzemstsrd.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+									<div class="fade in tab-pane" id="team-fortress-2-knightcomp-league">
+										<ul class="list-group">
+											<a class="list-group-item list-group-item-success login-init"><span class="label label-primary pull-right">
+													Teams: 146
+												</span>
+												<h4 class="list-group-item-heading">
+													KnightComp League (KCL) Season 1
+												</h4>
+												<div class="league-underlay" style="background: url(/assets/img/tournaments/bar_ixbkapbzss9gtkhqf3u6.png)">
+												</div>
+											</a>
+										</ul>
+									</div>
+								</div>
+								<div class="col-xs-3 col-sm-2">
+									<ul class="list-group">
+										<select name="team-fortress-2" id="team-fortress-2" class="form-control" data-toggle="tab">
+											<option selected="selected" value="team-fortress-2-all">All</option>
+											<option value="team-fortress-2-player-destruction">player destruction
+											</option>
+											<option value="team-fortress-2-arena">Arena</option>
+											<option value="team-fortress-2-hellborne-the-pit">Hellborne / The Pit
+											</option>
+											<option value="team-fortress-2-funny">funny</option>
+											<option value="team-fortress-2-weekend-cup">Weekend Cup</option>
+											<option value="team-fortress-2-ronnie-coleman">ronnie coleman</option>
+											<option value="team-fortress-2-rocket-jumping">Rocket Jumping</option>
+											<option value="team-fortress-2-fruit-mixes">Fruit Mixes</option>
+											<option value="team-fortress-2-customlander">Customlander</option>
+											<option value="team-fortress-2-bball">BBall</option>
+											<option value="team-fortress-2-cappingtv">CappingTV</option>
+											<option value="team-fortress-2-classic-mge-cup">Classic MGE Cup</option>
+											<option value="team-fortress-2-eurolander">EuroLander</option>
+											<option value="team-fortress-2-ultimate-ultiduo">Ultimate Ultiduo</option>
+											<option value="team-fortress-2-pure-league">PURE League</option>
+											<option value="team-fortress-2-knightcomp-league">KnightComp League</option>
+										</select>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="iframe-container">
+		<div class="panel panel-primary draggable-panel toolbar-panel ui-draggable ui-resizable" id="toolbox-tools" style="display: none;">
+			<div class=" panel-heading lang-panel-header-tools" style="height: 34px"> <i class="fa fa-times pull-right close-panel" id="close-toolbox-tools"></i><i class="fa pull-right fa-chevron-down" id="toggle-toolbox-tools"></i>
+			</div>
+			<iframe width="100%" height="100%" style="height:100%;width:100%;" id="toolbox-tools" class="resizable" src="Tournaments_files/auth.html"></iframe>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div></div>
+	</div>
+
+	<script type="text/javascript" src="Tournaments_files/devs.js"></script>
+
+
+</body></html>

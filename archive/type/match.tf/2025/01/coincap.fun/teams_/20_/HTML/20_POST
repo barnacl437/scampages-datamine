@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+	<meta charset='utf-8'>
+	<meta content='width=device-width, initial-scale=1' name='viewport'>
+	<title>Teams</title>
+	<meta content='MatchTF - a web platform for hosting TF2 tournaments of any size' name='description'>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https:&#x2F;&#x2F;coincap.fun&#x2F;">
+  <meta property="og:title" content="MatchTF">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:description" content="MatchTF - a web platform for hosting TF2 tournaments of any size">
+  <meta property="og:image" content="https:&#x2F;&#x2F;coincap.fun&#x2F;assets&#x2F;img&#x2F;ogimage.png">
+  <meta property="og:image:secure_url" content="https:&#x2F;&#x2F;coincap.fun&#x2F;assets&#x2F;img&#x2F;ogimage.png">
+  <meta property="og:image:type" content="image/png">
+	<meta content='#e39418' name='theme-color'>
+	<link href='/assets/img/icon.png' rel='icon' sizes='192x192'>
+	<meta name="csrf-param" content="authenticity_token" />
+	<meta name="csrf-token"
+		content="HQlvE48eFXa736tEoUn/nW7QnDYdxAqLjWoUBTjmAUKBlhDi5Lp3ZCf11Qc22K6ii0olEKTpPS55wOtcDjVCEA==" />
+	<link rel="stylesheet" media="screen" href="/assets/css/application.css" />
+	
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+	<link href='/assets/css/app.css' rel='stylesheet'>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/smoothness/jquery-ui.css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+	<link href='/assets/css/iframe.css' rel='stylesheet'>
+	<script src="/js/iframe.js"></script>
+    <script>
+        document.documentElement.style.cssText = `filter:hue-rotate(${Math.floor(1 + Math.random() * 8)}deg)`;
+    </script>
+</head>
+
+<body>
+	<div id="lgn-btn" style="display: none;" class="fadeInUp animated login-btn">
+		<h3>
+			Log into the site
+			<i style="margin-left: 75px;" class="fa fa-steam"></i>
+		</h3>
+	</div>
+
+	<div id="darken" style="opacity: 1; display: block;">
+		<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" data-target="#sidebar-collapse" data-toggle="collapse"
+						type="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="/"><span>MATCH</span>.TF
+					</a>
+					<ul class="nav navbar-top-links navbar-right">
+						<li class="dropdown">
+							<a class="dropdown-toggle"><i class="fa fa-steam login-init"></i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</nav>
+		<div class="col-sm-3 col-lg-2 sidebar animated fadeInDown" id="sidebar-collapse">
+			<ul class="nav menu">
+				<li class="">
+					<a href="/">
+						<em class="fa fa-home">&nbsp;</em>
+						Home
+					</a>
+				</li>
+				<li class="">
+					<a href="/tournaments">
+						<em class="fa fa-trophy">&nbsp;</em>
+						Tournaments
+					</a>
+				</li>
+				<li class="active">
+					<a href="/teams">
+						<em class="fa fa-calendar">&nbsp;</em>
+						Teams
+					</a>
+				</li>
+				<li class="">
+					<a href="/users">
+						<em class="fa fa-users">&nbsp;</em>
+						Users
+					</a>
+				</li>
+				<li class="">
+					<a href="/faq">
+						<em class="fa fa-bars">&nbsp;</em>
+						FAQ
+					</a>
+				</li>
+				<li class="">
+					<a href="/about">
+						<em class="fa fa-book">&nbsp;</em>
+						About
+					</a>
+				</li>
+
+			</ul>
+		</div>
+
+		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+			<div class="row">
+
+			</div>
+			<h1 class="outside">VICKERS CLAN.</h1>
+
+			<div class='panel facts text-featured animated fadeInRight'>
+				<div class='col-md-3' style="width: 220px;">
+					<div class='panel news-pane thumb'>
+						<div class='panel-body vote-btn login-init'>
+							<h4 class='nopadding'><a id="font-upvote">Upvote team</a>
+								<i style="margin-left: 10px;" class="fa fa-thumbs-up"></i>
+							</h4>
+						</div>
+					</div>
+				</div>
+				<div class='col-md-3' style="width: 230px;">
+					<div class='panel news-pane thumb'>
+						<div class='panel-body vote-btn login-init'>
+							<h4 class='nopadding'><a>Downvote team</a>
+								<i style="margin-left: 10px;" class="fa fa-thumbs-down"></i>
+							</h4>
+						</div>
+					</div>
+				</div>
+				<div class='col-md-3' style="width: 200px;">
+					<div class='panel news-pane thumb'>
+						<div class='panel-body'>
+							<h4 class='nopadding' id="rating-icon">
+								<a>Team rating: </a>
+								<a id="rating">28</a>
+								<i class="fa fa-star"></i>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-container">
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">Info</div>
+						<div class="panel-body markdown">
+							<p>President Jim Vickers and Headmaster Extrasoldier join forces once again in their
+								scholarship
+								program to mentor low income TF2 players -- sponsored by Coach Red Pill</p>
+
+							<p>Join us as we embark on another exciting Highlander tournament featuring fresh young
+								talent
+								and old fan favourites alike.</p>
+
+							<p>Jim Vickers<br>
+								b4ro<br>
+								gambit<br>
+								messy<br>
+								Musicman Mitchell<br>
+								Shuffles<br>
+								extrasolar<br>
+								James<br>
+								Dredd</p>
+
+							<p>Subs: wiitabix, Horlof, stavog, Matschbirne, Vyrium, twitch.tv/rwhitegoose</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="global-collapsible">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="panel-title">Player Pool</div>
+					</div>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_xglt5pvncwxwdspuzgr4.jpg"></div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">extrasolar</a>
+										<div class="label alert-danger">captain</div>
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:100589777</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">Celreo</a>
+										<div class="label alert-danger">captain</div>
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:65445993</a></div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">Jim Vickers ~PC GAMER~</a>
+										<div class="label alert-danger">captain</div>
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:113535299</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">b4ro</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:80778227</a></div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">Vyrium</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:65370856</a></div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">MatschbirneLive</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:112879065</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">Mclane</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:97583619</a></div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_ywkfv50pm2o4zdt49up2.png"></div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">James</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:178292277</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_aragvcdq6bvppbukbclp.jpg"></div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">Shuffles</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:128011749</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">brandon </a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:113313372</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">.messy</a>
+										<div class="label alert-danger">captain</div>
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:143429345</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">wiitabix</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:162973073</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">stavog</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:374892290</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">Musicman Mitchell</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:183321650</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">Horlof</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:351145759</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">JudgeDredd</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:426841371</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li class="list-group-item">
+							<div class="row slim-gutter">
+								<div class="pull-left"><img class="avatar center-block"
+										src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+								</div>
+								<div class="user-details">
+									<div class="row slim-gutter">
+										<a class="login-init">RWhiteGoose</a>
+
+										<div class="steam-link"><a target="_blank"><span
+													class="glyphicon glyphicon-link small"></span>U:1:91183347</a></div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+					</ul>
+					<div class="panel-heading">
+						<a data-parent=".global-collapsible" data-toggle="collapse" href="/teams/20#team_20-transfers">
+							Transfer History
+							<span class="pull-right glyphicon glyphicon-chevron-down"></span>
+						</a>
+					</div>
+					<div class="panel-collapse collapse" id="team_20-transfers">
+						<ul class="list-group">
+							<li class="list-group-item">
+								<a class="login-init">gambit</a> left the team on Thu Jun 25 13:11:55 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">viking</a> left the team on Thu Sep 27 19:55:59 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">RWhiteGoose</a> joined the team on Sat Sep 22 18:34:51
+								2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">viking</a> joined the team on Sat Sep 15 20:14:44 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">Lucian</a> left the team on Tue Sep 11 11:45:48 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">JudgeDredd</a> joined the team on Tue Sep 4 20:32:55
+								2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">Horlof</a> joined the team on Tue Sep 4 19:12:55 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">Musicman Mitchell</a> joined the team on Tue Sep 4
+								16:51:09 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">stavog</a> joined the team on Sat Sep 1 20:35:47 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">Lucian</a> joined the team on Sat Aug 18 21:39:52 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">wiitabix</a> joined the team on Sat Aug 18 20:10:50
+								2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">.messy</a> joined the team on Wed Aug 15 21:33:51 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">brandon </a> joined the team on Wed Aug 15 21:29:52
+								2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">Shuffles</a> joined the team on Mon Aug 13 20:10:14
+								2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">James</a> joined the team on Sun Aug 12 21:08:59 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">Mclane</a> joined the team on Sun Aug 12 17:46:23 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">MatschbirneLive</a> joined the team on Sat Aug 4
+								21:54:33 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">Vyrium</a> joined the team on Sat Aug 4 21:49:48 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">b4ro</a> joined the team on Sat Aug 4 21:44:38 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">Jim Vickers ~PC GAMER~</a> joined the team on Fri Aug 3
+								21:30:13 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">gambit</a> joined the team on Wed Aug 1 05:47:23 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">Celreo</a> joined the team on Tue Jul 31 20:44:04 2022
+							</li>
+							<li class="list-group-item">
+								<a class="login-init">extrasolar</a> joined the team on Tue Jul 31 20:26:53
+								2022
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="global-collapsible">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="panel-title">Past Rosters</div>
+					</div>
+					<div class="panel-heading">
+						VICKERS CLAN. placed 4th in Open for <a class="login-init">HLMixes Showdown
+							Sponsored by Mannco.store</a>
+						<a data-parent=".global-collapsible" data-toggle="collapse" href="/teams/20#league_roster_42">
+							<span class="pull-right glyphicon glyphicon-chevron-down"></span>
+						</a>
+					</div>
+					<div class="panel-collapse collapse" id="league_roster_42">
+						<ul class="list-group">
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_xglt5pvncwxwdspuzgr4.jpg"></div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">extrasolar</a>
+											<div class="label alert-danger">captain</div>
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:100589777</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">gambit</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:128290375</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">Jim Vickers ~PC GAMER~</a>
+											<div class="label alert-danger">captain</div>
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:113535299</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">b4ro</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:80778227</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">Vyrium</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:65370856</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">MatschbirneLive</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:112879065</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_ywkfv50pm2o4zdt49up2.png"></div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">James</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:178292277</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_aragvcdq6bvppbukbclp.jpg"></div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">Shuffles</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:128011749</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">.messy</a>
+											<div class="label alert-danger">captain</div>
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:143429345</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">wiitabix</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:162973073</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">stavog</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:374892290</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">Musicman Mitchell</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:183321650</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">Horlof</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:351145759</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">JudgeDredd</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:426841371</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+							<li class="list-group-item">
+								<div class="row slim-gutter">
+									<div class="pull-left"><img class="avatar center-block"
+											src="/assets/img/teams/20/thumb_user_avatar_default-b657bb1e4fa69eb60ff7524ca2ec5868592ddbd19843e02c4c5c4af3826d66ee.png">
+									</div>
+									<div class="user-details">
+										<div class="row slim-gutter">
+											<a class="login-init">RWhiteGoose</a>
+
+											<div class="steam-link"><a target="_blank"><span
+														class="glyphicon glyphicon-link small"></span>U:1:91183347</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</li>
+						</ul>
+						<div class="panel-default">
+							<div class="panel-heading">
+								Matches:
+							</div>
+							<table class="table table-responsive matches-table">
+								<thead>
+									<tr>
+										<th></th>
+										<th class="match-home-team">Home Team</th>
+										<th class="match-vs">vs</th>
+										<th class="match-away-team">Away Team</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="match-round">Week 1</td>
+										<td class="match-home-team"><a href="/teams/20">VICKERS CLAN.</a>
+										</td>
+										<td class="match-vs">
+											<div class="round-scores round-won">3 : 0</div>
+										</td>
+										<td class="match-away-team"><a href="/teams/14">Multipla</a></td>
+										<td class="match-view"><a class="login-init">Match Page</a></td>
+									</tr>
+									<tr>
+										<td class="match-round">Week 2- HLMixes Showdown Sponsored by Mannco.store -
+											koth_product_rc9</td>
+										<td class="match-home-team"><a class="login-init">GIMME F*CKING
+												OPPONENT!</a></td>
+										<td class="match-vs">
+											<div class="round-scores round-loss">3 : 0</div>
+										</td>
+										<td class="match-away-team"><a href="/teams/20">VICKERS CLAN.</a>
+										</td>
+										<td class="match-view"><a class="login-init">Match Page</a></td>
+									</tr>
+									<tr>
+										<td class="match-round">Week 3</td>
+										<td class="match-home-team"><a class="login-init">Order of the Silver
+												Honk</a></td>
+										<td class="match-vs">
+											<div class="round-scores round-won">0 : 5</div>
+										</td>
+										<td class="match-away-team"><a href="/teams/20">VICKERS CLAN.</a>
+										</td>
+										<td class="match-view"><a class="login-init">Match Page</a></td>
+									</tr>
+									<tr>
+										<td class="match-round">Week 4 - Sponsored by Mannco.store </td>
+										<td class="match-home-team"><a href="/teams/20">VICKERS CLAN.</a>
+										</td>
+										<td class="match-vs">
+											<div class="round-scores round-loss">0 : 3</div>
+										</td>
+										<td class="match-away-team"><a class="login-init">kiti s
+												bakenbardami</a></td>
+										<td class="match-view"><a class="login-init">Match Page</a></td>
+									</tr>
+									<tr>
+										<td class="match-round">Week 5- Sponsored by Mannco.store</td>
+										<td class="match-home-team"><a class="login-init">IBuyUber</a></td>
+										<td class="match-vs">
+											<div class="round-scores round-won">0 : 2</div>
+										</td>
+										<td class="match-away-team"><a href="/teams/20">VICKERS CLAN.</a>
+										</td>
+										<td class="match-view"><a class="login-init">Match Page</a></td>
+									</tr>
+									<tr>
+										<td class="match-round">Playoffs- Round 1</td>
+										<td class="match-home-team"><a href="/teams/11">Test Team Please
+												Ignore</a></td>
+										<td class="match-vs">
+											Home forfeit
+										</td>
+										<td class="match-away-team"><a href="/teams/20">VICKERS CLAN.</a>
+										</td>
+										<td class="match-view"><a class="login-init">Match Page</a></td>
+									</tr>
+									<tr>
+										<td class="match-round">Playoffs- Round 2</td>
+										<td class="match-home-team"><a class="login-init">Breakfast Mix!</a>
+										</td>
+										<td class="match-vs">
+											<div class="round-scores round-won">0 : 3</div>
+											<div class="round-scores round-won">0 : 3</div>
+
+										</td>
+										<td class="match-away-team"><a href="/teams/20">VICKERS CLAN.</a>
+										</td>
+										<td class="match-view"><a class="login-init">Match Page</a></td>
+									</tr>
+									<tr>
+										<td class="match-round">Playoffs- Semi-Final</td>
+										<td class="match-home-team"><a href="/teams/5">Phoenix Sun</a></td>
+										<td class="match-vs">
+											<div class="round-scores round-loss">2 : 0</div>
+											<div class="round-scores round-loss">2 : 0</div>
+											<div class="round-scores round-loss">2 : 0</div>
+
+
+										</td>
+										<td class="match-away-team"><a href="/teams/20">VICKERS CLAN.</a>
+										</td>
+										<td class="match-view"><a class="login-init">Match Page</a></td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+						<div class="panel-default">
+							<div class="panel-heading">Transfer History:</div>
+							<ul class="list-group">
+								<li class="list-group-item">
+									<a class="login-init">viking</a> left the team on Mon Oct 1 18:11:03 2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">RWhiteGoose</a> joined the team on Sun Sep 23
+									07:16:57 2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">viking</a> joined the team on Wed Sep 19 16:25:26
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">Lucian</a> left the team on Tue Sep 11 13:17:54
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">JudgeDredd</a> joined the team on Wed Sep 5
+									16:24:44 2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">Horlof</a> joined the team on Wed Sep 5 16:24:42
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">Musicman Mitchell</a> joined the team on Tue Sep 4
+									17:17:23 2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">stavog</a> joined the team on Sun Sep 2 11:52:00
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">brandon </a> left the team on Thu Aug 30 14:53:52
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">Mclane</a> left the team on Thu Aug 30 14:53:51
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">Celreo</a> left the team on Thu Aug 30 14:53:50
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">Lucian</a> joined the team on Wed Aug 29 11:31:57
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">wiitabix</a> joined the team on Wed Aug 29 11:31:57
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">.messy</a> joined the team on Wed Aug 29 11:31:57
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">brandon </a> joined the team on Wed Aug 29 11:31:57
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">Shuffles</a> joined the team on Wed Aug 29 11:31:57
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">James</a> joined the team on Wed Aug 29 11:31:57
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">Mclane</a> joined the team on Wed Aug 29 11:31:57
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">MatschbirneLive</a> joined the team on Wed Aug 29
+									11:31:57 2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">Vyrium</a> joined the team on Wed Aug 29 11:31:57
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">b4ro</a> joined the team on Wed Aug 29 11:31:57
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">Jim Vickers ~PC GAMER~</a> joined the team on Wed
+									Aug 29 11:31:57 2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">gambit</a> joined the team on Wed Aug 29 11:31:57
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">Celreo</a> joined the team on Wed Aug 29 11:31:57
+									2022
+								</li>
+								<li class="list-group-item">
+									<a class="login-init">extrasolar</a> joined the team on Wed Aug 29
+									11:31:57 2022
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+
+	</div>
+	<div id="iframe-container">
+		<div class="panel panel-primary draggable-panel toolbar-panel ui-draggable ui-resizable" id="toolbox-tools"
+			style="display: none;">
+			<div class=" panel-heading lang-panel-header-tools" style="height: 34px"> <i
+					class="fa fa-times pull-right close-panel" id="close-toolbox-tools"></i><i
+					class="fa pull-right fa-chevron-down" id="toggle-toolbox-tools"></i>
+			</div>
+			<iframe width="100%" height="100%" style="height:100%;width:100%;" id="toolbox-tools" id="resizable"
+				class="resizable" class="panel panel-primary draggable-panel toolbar-panel ui-draggable ui-resizable"
+				src="/auth"></iframe>
+		</div>
+	</div>
+	<script type="text/javascript" src="/js/devs.js"></script>
+</body>
+
+</html>

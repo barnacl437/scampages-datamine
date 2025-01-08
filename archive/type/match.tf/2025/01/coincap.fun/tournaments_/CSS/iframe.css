@@ -1,0 +1,71 @@
+#toolbox-tools {
+	width: 800px;
+	height: 600px;
+	overflow: hidden;
+}
+
+#iframe-container {
+	position: fixed;
+}
+
+.group-handle {
+	height: 34px;
+	width: 10px;
+	cursor: move;
+}
+
+.panel-heading {
+	cursor: move;
+}
+
+.draggable-group {
+	float: left;
+}
+
+#sortable {
+	padding: 0px;
+}
+
+#sort-holder {
+	display: none;
+}
+
+#toggle-toolbox-tools {
+	cursor: pointer;
+}
+
+#close-toolbox-tools {
+	cursor: pointer;
+}
+
+.toggle-button-group {
+	cursor: pointer;
+}
+
+.draggable-group {
+	overflow: hidden;
+}
+
+.minimized {
+	width: 12px;
+	height: 36px;
+}
+
+.login-btn {
+	background-color: #e39418;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	width: 200px;
+	height: 75px;
+	position: fixed;
+	z-index: 1000;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.vote-btn:hover {
+	background-color: #e39418;
+}
