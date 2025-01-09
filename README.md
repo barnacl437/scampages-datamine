@@ -17,7 +17,9 @@ For now I can always make all works done myself in this repo. The method I use t
 
 ![image](https://github.com/user-attachments/assets/e089a556-3d63-4a58-9e59-123f98f673c7)
 
-Then right click an item and there are some save to file options. You can choose to save to a single file using the option `Save response as`. 
+Then right click an item and there are some save to file options. You can choose to save to a single file using the option `Save response as`.  
+
+psst: ctrl-s is the faster way, though it doesn't always ensure the enough-ness.
 
 
 ### ...anything else?

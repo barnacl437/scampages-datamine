@@ -12,4 +12,6 @@ You should sort different kinds of data into their own folders named with their 
 
 For subfolder levels preserved from those websites, add a _ (dash) to the end of folder name (such as `terny_`).
 
+> [!NOTE]
+> nvm that convention. I have planned to unsort things into different types to best preserve the original construction of websites. Websites are totally, if not mostly, harmless when downloaded and opened, except that there may be malicious js codes that would work omnitempo, but this case is usually rare.
 

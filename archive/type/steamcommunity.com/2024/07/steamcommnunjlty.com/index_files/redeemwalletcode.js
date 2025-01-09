@@ -1,0 +1,533 @@
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
+
+
+var g_recaptchaInstance = null;
+
+function DisplayPage( page )
+{
+		$('error_display').innerHTML = '';
+		$('error_display').style.display = 'none';	
+
+		switch ( page )
+		{
+			case 'code':
+				$('wallet_code_form').style.display = '';
+				$('redeem_wallet_code_upsell_text').style.display = '';
+				$('address_form').style.display = 'none';
+				$('validate_btn').style.display = '';
+				$('validate_btn_in_progress').style.display = 'none';		
+				$('wallet_code').value = '';
+			break;
+			
+			case 'address':
+				$('address_btn').style.display = '';
+				$('address_btn_in_progress').style.display = 'none';
+				$('wallet_code_form').style.display = 'none';
+				$('redeem_wallet_code_upsell_text').style.display = 'none';
+				$('main_content').style.backgroundImage = "url('')";
+				$('address_form').style.display = '';
+			break;
+		}
+}
+
+function UpdateStateSelection()
+{
+	try 
+	{
+		if ( $('billing_country').value == 'US' )
+		{
+			$('billing_state_text').style.display = 'none';
+			$('billing_state_select_dselect_container').style.display = 'block';
+		}
+		else
+		{
+			$('billing_state_text').style.display = 'block';
+			$('billing_state_select_dselect_container').style.display = 'none';
+		}
+	} 
+	catch( e ) 
+	{
+		ReportRedeemJSError( 'Failed in UpdateStateSelection()', e );
+	}
+}
+
+function ReportRedeemJSError( message, e )
+{
+	try 
+	{
+		if (typeof e == 'string')
+    		e = new Error(e);
+    		
+		ReportError( '/public/javascript/redeemwalletcode.js?l=english', message, message+":\n\n  Exception: "+e.name+" - "+e.message+"\n" );
+	} catch( e ) 
+	{
+			}
+}
+
+function RenderRecaptcha( parent_sel, gid, sitekey, s )
+{
+    var render_div_id = 'recaptcha_render_' + gid;
+    $J( parent_sel ).empty();
+    $J( parent_sel ).append('<div id="' + render_div_id + '"></div>');
+    g_recaptchaInstance = grecaptcha.enterprise.render( render_div_id, {
+        'sitekey': sitekey,
+        'theme': 'dark',
+        'callback': function(n){},
+        's': s
+    });
+}
+
+function RefreshCaptcha()
+{
+    new Ajax.Request( 'https://web.archive.org/web/20240722092854/https://store.steampowered.com/account/ajaxrefreshwalletcaptcha/',
+        {
+            type: 'POST',
+            onSuccess: function(transport){
+                if ( transport.responseText ){
+
+                    try {
+                        var result = transport.responseText.evalJSON(true);
+                    } catch ( e ) {
+                        //alert(e);
+                        return;
+                    }
+
+                    UpdateCaptcha(result);
+                }
+            }
+        });
+}
+
+function UpdateCaptcha(data)
+{
+    if ( data.gid != -1 ) {
+        $J( '#captcha_entry' ).show();
+        $J( '#input_captcha' ).val('');
+        if ( data.type == 1 ) {
+            $J( '#captcha_entry_recaptcha' ).hide();
+            $J( '#captcha_entry_text' ).show();
+            $J( '#captchaImg' ).attr( 'src', 'https://web.archive.org/web/20240722092854/https://store.steampowered.com/public/captcha.php?gid=' + data.gid );
+        } else if ( data.type == 2 ) {
+            $J( '#captcha_entry_recaptcha' ).show();
+            $J( '#captcha_entry_text' ).hide();
+            RenderRecaptcha( "#captcha_entry_recaptcha", data.gid, data.sitekey, data.s );
+        }
+        $J( '#input_captcha_gid' ).val(data.gid);
+    } else {
+        $J( '#captcha_entry' ).hide();
+        $J( '#captcha_entry_recaptcha' ).empty();
+        $J( '#input_captcha' ).val( '' );
+        $J( '#input_captcha_gid' ).val( '' );
+    }
+}
+
+var g_bRedeemWalletCodeCallRunning = false;
+function RedeemWalletCode()
+{
+		if( g_bRedeemWalletCodeCallRunning )
+		return;
+		
+	if ( $('wallet_code').value == '' )
+	{
+		DisplayErrorMessage( 'You must enter a wallet code to proceed.' );		
+	}
+	else
+	{
+		try 
+		{
+						g_bRedeemWalletCodeCallRunning = true;
+			
+			$('validate_btn').style.display = 'none';
+			$('validate_btn_in_progress').style.display = '';
+			
+			new Ajax.Request('https://web.archive.org/web/20240722092854/https://store.steampowered.com/account/ajaxredeemwalletcode/',
+			{
+			    method:'post',
+			    parameters: { 
+					'wallet_code' : $('wallet_code').value,
+									    'sessionid' : g_sessionID
+				},
+			    onSuccess: function(transport){
+					g_bRedeemWalletCodeCallRunning = false;
+
+					
+					if ( transport.responseText ){
+						try {
+							var result = transport.responseText.evalJSON(true);
+			      		} catch ( e ) {
+			      			// Failure
+							OnRedeemWalletCodeFailure( 0, 0  );
+			      		}
+			      	   	// Success...
+						if ( result.success == 11 && result.detail == 48 )
+						{
+							DisplayPage( 'address' );
+							UpdateStateSelection();
+							return;
+						}
+			      	   	else if ( result.success == 1 && result.detail == 0 )
+			      	   	{
+							OnRedeemWalletCodeSuccess( result );
+			      	   		return;
+			      	   	}
+			      	   	else
+			      	   	{
+							OnRedeemWalletCodeFailure( result.success, result.detail );
+			      	   		return;
+			      	   	}
+				  	}
+				  	
+										OnRedeemWalletCodeFailure( 0, 0  );
+			    },
+			    onFailure: function(){
+										g_bRedeemWalletCodeCallRunning = false;
+					OnRedeemWalletCodeFailure( 0, 0  );
+				}
+			});
+		} 
+		catch(e) 
+		{
+			ReportRedeemJSError( 'Failed gathering form data and calling RedeemWalletCode', e );
+		}
+	}
+}
+
+function SubmitAddressForm()
+{
+		var errorString = '';
+	
+		var rgBadFields = { 
+		billing_address : false,
+		billing_city : false,
+		billing_state_text : false,
+		billing_postal_code : false,
+		billing_state_select_trigger : false
+	}
+	
+	try 
+	{
+		if ( $( 'billing_address' ).value.length < 1 )
+		{
+			errorString += 'Please enter your billing address.<br/>';
+			rgBadFields.billing_address = true;
+		}
+				
+		if ( $( 'billing_city' ).value.length < 1 )
+		{
+			errorString += 'Please enter your billing city.<br/>';
+			rgBadFields.billing_city = true;
+		}
+			
+				if  ( $( 'billing_country' ).value == 'US' )
+		{
+			if ( $('billing_state_select').value.length < 1 )
+			{
+				errorString += 'Please enter a State or Province.<br/>';
+				rgBadFields.billing_state_select_trigger = true;
+			}
+		}
+			
+		if ( $( 'billing_country' ).value == 'US' )
+		{
+			if ( $( 'billing_postal_code' ).value.length < 5 )
+			{
+				errorString += 'Please enter your zip or postal code.<br/>';
+				rgBadFields.billing_postal_code = true;
+			}
+		}
+		else if ( $( 'billing_postal_code' ).value.length < 1 )
+		{
+			errorString += 'Please enter your zip or postal code.<br/>';
+			rgBadFields.billing_postal_code = true;
+		}
+	}
+	catch(e) 
+	{
+		ReportRedeemJSError( 'Failed validating address info form', e );
+	}
+
+	try 
+	{
+				for ( var key in rgBadFields )
+		{
+			if ( rgBadFields[key] )
+			{
+				ValidationMarkFieldBad( key );
+			}
+			else
+			{
+				ValidationMarkFieldOk( key );
+			}
+		}
+
+				if ( errorString != '' )
+		{
+						var rgErrors = errorString.split( '<br/>' );
+			if ( rgErrors.length > 3 )
+			{
+				errorString = '';
+				errorString = rgErrors[0] + '<br/>' + rgErrors[1] + '<br/>' + 'And find more errors highlighted below.' + '<br/>';
+			}		
+		
+			DisplayErrorMessage( errorString );
+		}
+		else
+		{
+						$('error_display').innerHTML = '';
+			$('error_display').style.display = 'none';
+			
+						CreateWalletAndCheckFunds( true );
+		}
+	} 
+	catch(e) 
+	{
+		ReportRedeemJSError( 'Failed showing error or submitting payment info form', e );
+	}
+}
+
+var g_bCreateWalletAndCheckFundsRunning = false;
+function CreateWalletAndCheckFunds( bCreateFromAddress )
+{
+		if( g_bCreateWalletAndCheckFundsRunning )
+		return;
+		
+	try 
+	{
+				g_bCreateWalletAndCheckFundsRunning = true;
+		
+		$('address_btn').style.display = 'none';
+		$('address_btn_in_progress').style.display = '';
+		
+		new Ajax.Request('https://web.archive.org/web/20240722092854/https://store.steampowered.com/account/ajaxcreatewalletandcheckfunds/',
+		{
+		    method:'post',
+		    parameters: { 
+					'wallet_code' : $('wallet_code').value,
+					'CreateFromAddress' : bCreateFromAddress ? 1 : 0,
+					'Address' : $('billing_address').value,
+					'City' : $('billing_city').value,
+					'Country' : $('billing_country').value,
+					'State' : ($('billing_country').value == 'US' ? $('billing_state_select').value : $('billing_state_text').value),
+					'PostCode' : $('billing_postal_code').value,
+			        'sessionid' : g_sessionID
+			},
+		    onSuccess: function(transport){
+		    	g_bCreateWalletAndCheckFundsRunning = false;
+				if ( transport.responseText ){
+					try {
+						var result = transport.responseText.evalJSON(true);
+		      		} catch ( e ) {
+		      			// Failure
+		      			OnCreateWalletAndCheckFundsFailure( 2 );
+		      		}
+		      	   	// Success...
+		      	   	if ( result.success == 1 )
+		      	   	{
+		      	   		OnCreateWalletAndCheckFundsSuccess( result );
+		      	   		return;
+		      	   	}
+		      	   	else
+		      	   	{
+		      	   		OnCreateWalletAndCheckFundsFailure( result.success );
+		      	   		return;
+		      	   	}
+			  	}
+			  	
+								OnCreateWalletAndCheckFundsFailure( 2  );
+		    },
+		    onFailure: function(){
+								g_bCreateWalletAndCheckFundsRunning = false;
+				OnCreateWalletAndCheckFundsFailure( 2  );
+			}
+		});
+	} 
+	catch(e) 
+	{
+		ReportRedeemJSError( 'Failed gathering form data and calling CreateWallet', e );
+	}
+}
+
+function UpdateRedeemForm( result )
+{
+		$('redeem_wallet_success_description').innerHTML = result.success_message;
+		$('redeem_wallet_success_upsell_text').innerHTML = result.upsell_text;
+		$('redeem_wallet_success_app_image_link').href = result.redirect_url;
+		$('redeem_wallet_success_button').href = result.redirect_url;
+		$('redeem_wallet_success_button_text').innerHTML = result.redirect_button_text;
+		
+		if ( result.bRedirectToApp )
+		{
+			$('redeem_wallet_success_default_image').style.display = 'none';
+			$('redeem_wallet_success_image').src = result.redirect_image;
+			$('redeem_wallet_success_app_image').style.display = '';
+		}
+		else
+		{
+			$('redeem_wallet_success_default_image').style.display = '';
+			$('redeem_wallet_success_app_image').style.display = 'none';
+		}	
+}
+
+function OnCreateWalletAndCheckFundsSuccess( result )
+{
+	try 
+	{
+		RedeemWalletCode();
+	} 
+	catch( e ) 
+	{
+		ReportRedeemJSError( 'Failed handling CreateWallet success', e );
+	}
+}
+
+function OnCreateWalletAndCheckFundsFailure( detail )
+{
+	try 
+	{
+		DisplayErrorMessage( 'There was an error validating your wallet.  Your wallet code has not been redeemed.<br>Please contact <a href="https://web.archive.org/web/20240722092854/http://support.steampowered.com">Steam Support</a>.' );
+		$('address_btn').style.display = '';
+		$('address_btn_in_progress').style.display = 'none';
+		$('validate_btn').style.display = '';
+		$('validate_btn_in_progress').style.display = 'none';
+	} 
+	catch (e) 
+	{
+		ReportRedeemJSError( 'Failed handling CreateWallet failure', e );
+	}
+}
+
+
+function OnRedeemWalletCodeSuccess( result )
+{
+	try 
+	{
+		$('wallet_current_balance').innerHTML = result.formattednewwalletbalance;
+		DisplayPage( 'code' );
+		showModal ( 'redirectStorePageModal', true );
+	} 
+	catch( e ) 
+	{
+		ReportRedeemJSError( 'Failed handling RedeemWalletCode success', e );
+	}
+
+	$('validate_btn').style.display = '';
+	$('validate_btn_in_progress').style.display = 'none';
+}
+
+function OnRedeemWalletCodeFailure( success, detail )
+{
+	try 
+	{
+		var sErrorMessage = 'There was an error redeeming the entered code.';
+
+		switch ( success )
+		{
+			case 16:
+				sErrorMessage = '#youraccount_wallet_code_generic_not_redeemed';
+				break;
+
+            case 101:
+                sErrorMessage = 'You must complete the captcha to attempt to redeem your gift card.';
+                break;
+
+			default:
+				switch ( detail )
+				{
+					case 44:
+						sErrorMessage = 'Your Steam account is currently restricted from activating Steam Wallet codes. Please contact <a href="https://web.archive.org/web/20240722092854/https://support.steampowered.com/newticket.php?category=15">Steam Support</a> for further assistance.';
+						break;
+
+					case 15:
+						sErrorMessage = 'The Steam Wallet code you have entered has already been redeemed. Steam Support is unable to issue you a new code.';
+						break;
+
+					case 9:
+						sErrorMessage = 'The Steam Wallet code you have entered has already been previously redeemed on your account.';
+						break;
+				
+					default:
+						sErrorMessage = 'There was an error redeeming the entered code.'
+											+ '<ul class="wallet_redeem_error"><li>The code may be invalid. Please carefully verify the characters as you re-enter the code and double check to see if you\'ve mistyped your key. I, L, and 1 can look alike, as can V and Y, and 0 and O.</li>'
+											+ '<li>The code may not yet have been activated.  It may take several hours after time of purchase before activation is completed by your retailer, please wait and try redeeming the code again in a little while.</li>'
+											+ '<li>If the currency of the code you are attempting to redeem is different than the region in which you are located, you may not be able to redeem this gift card to your account.  If this is the case please return this code to the retailer where it was purchased.</li>'
+											+ '<li>If the problem persists, please contact <a href="https://web.archive.org/web/20240722092854/https://help.steampowered.com/wizard/HelpWithWalletCode">Steam Support</a> for further assistance.</li></ul>';
+						break;
+				}
+				break;
+		}
+		
+		DisplayErrorMessage( sErrorMessage );
+
+		$('validate_btn').style.display = '';
+		$('validate_btn_in_progress').style.display = 'none';
+
+	} 
+	catch (e) 
+	{
+		ReportRedeemJSError( 'Failed handling RedeemWalletCode failure', e );
+	}
+}
+
+function DisplayErrorMessage( strMessage )
+{
+	$('error_display').innerHTML = strMessage;
+	$('error_display').style.display = 'block';
+	
+	new Effect.Highlight( 'error_display', { endcolor : '#000000', startcolor : '#ff9900' } );
+}
+
+function ValidationMarkFieldBad( elem )
+{
+	if ( $(elem) )
+	{
+		if ( $(elem).hasClassName( 'highlight_on_error' ) )
+			new Effect.Morph( elem, {style: 'color: #FF9900', duration: 0.5 } );
+		else
+			new Effect.Morph( elem, {style: 'border-color: #FF9900', duration: 0.5 } )
+	}
+}
+
+function ValidationMarkFieldOk( elem )
+{
+	if ( $(elem) )
+	{
+		if ( $(elem).hasClassName( 'highlight_on_error' ) )
+			$(elem).style.color='';
+		else
+			$(elem).style.borderColor = '';
+	}
+}
+
+
+
+}
+/*
+     FILE ARCHIVED ON 09:28:54 Jul 22, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:07:56 Jan 09, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.504
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.009
+  esindex: 0.011
+  cdx.remote: 9.874
+  LoadShardBlock: 2122.547 (3)
+  PetaboxLoader3.datanode: 2254.014 (5)
+  load_resource: 800.56 (2)
+  PetaboxLoader3.resolve: 606.622 (2)
+*/
