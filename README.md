@@ -28,5 +28,8 @@ See this as a hall of shame for every scamming attempts.
 
 I also have an Internet Archive account where I save what I've found. I've been saving since at least 2021, so how much I've done on here will also have stuff on IArchive taken part in. My plan right now is to import an amount of websites I archived in the past few years on IA. If it catches some of your curiousity right now, you can view my web archive [here](https://archive.org/details/@barnacle555/web-archive). 
 
+
+obtw... if you are experts or know something about how these shits work, it is greatly appreciated. You can contact me if something's wrong or I seem to need suggestions. Tbh I just barely have much knowledge about full-stack web dev or sysadmin or any craps. I'm doing my best as an amateur collector during leisure times, but may sometimes reveal the amateurness more than what is able to be decent-looking. Thanks a bunch.
+
 ### licence
 You are free to use, reproduce, redistribute or modify any non-copyrighted materials used in this repository, such as trivial js codes and website templates (if any). The licence doesn't recommend you to sell them and can ask you to use it rationally and ethically as if it would bring benefits to both yourself and people in general.
