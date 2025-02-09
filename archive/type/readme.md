@@ -1,17 +1,43 @@
 ### NOTE BEFORE PROGRESSING FURTHER:
-This "type" folder is for separating different kinds of scamming, classified by service domain names.
+This "type" folder is for separating different kinds of scamming, classified by service domain names. Each website archived and/or a folder containing archived websites, shall be called 'record'.
 
-If you are contributing to this, you can add a folder with service domain name if it's not done so already, such as `discord.com/` or `steamcommunity.com/` and then make a record of those scam websites by creating your folders with the corresponding scam domain names inside, for example `steencumgoonity.com/` (cum grano salis). 
+If you are contributing to this, you can add a folder with service domain name if it's not done so already, such as `discord.com/` or `steamcommunity.com/` and then make a record of those scam websites by creating your folders with the corresponding scam domain names inside, for example `steencumgoonity.com/` (/s). 
 
-You can also make subfolders for different file types inside the folders for each record, such as js/ or html/. Upload it directly or you can fork and make pull requests to this repo. Complying to this will ensure this repo be properly managed and will make it more useful for people looking around. 
+Please preserve the website structure as-is, for instance, if the scammer put their main working site, i.e. the site that is used mainly for frauding user to type their information in, at `example.com/discount/abc/def/login.html`, just create each folder until it looks right. Usually all the other locations in the scam webserver might not be used at all, and may throw you 404, then either would reveal the tool used for hosting, such as apache3 or nginx (which is funny to watch btw). 
 
-### Naming convention:
-You should sort different kinds of data into their own folders named with their file types, like this:
+It's perhaps a good practice to check them out, but please do so, and the rest as well, in a safety-first manner: open anything unsafe in browsers' private/incognito mode. NEVER PROVIDE SENSITIVE DATA TO SUCH WEBSITES. If you don't know anything about saving or are dreaded of your belongings being exposed, better just look around.
 
-![image](https://github.com/user-attachments/assets/512a1d30-fad8-4f30-8b71-1e9f6a85dac8)
+Upload it directly (if you have rights) or you can fork and make pull requests to this repo. Complying to all of these will ensure this repo be properly managed and will make it more useful for people looking around.
 
-For subfolder levels preserved from those websites, add a _ (dash) to the end of folder name (such as `terny_`).
+### how readme.txt-s are written, a.k.a. readme.txt structure
 
-> [!NOTE]
-> nvm that convention. I have planned to unsort things into different types to best preserve the original construction of websites. Websites are totally, if not mostly, harmless when downloaded and opened, except that there may be malicious js codes that would work omnitempo, but this case is usually rare.
+every website records need a readme.txt for best clarification, i.e. more clear information about the records themselves.
+
+template is as following.
+```
+[website domain name (no https/http or protocols pls)]
+archived [date (d/m/y, i.e. 1/jan/1970)]
+
+nslookup result while online: [in your terminal, type nslookup {domain name}]
+======terminal output====== [just an example:]
+
+Server:		127.0.0.1
+Address:	127.0.0.1#53
+
+Non-authoritative answer:
+Name:	{domain name}
+Address: 123.45.67.89
+Name:	{domain name}
+Address: 98.76.54.231
+Name:	{domain name}
+Address: 8888:7777:4444::d10
+Name:	{domain name}
+Address: 6969:420::dead:beef
+
+======end terminal output======
+
+
+other infos:
+[treat this as either a note or flag.]
+```
 
