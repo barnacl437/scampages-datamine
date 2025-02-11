@@ -37,7 +37,7 @@ Address: 6969:420::dead:beef
 ======end terminal output======
 
 
-other infos:
+other info:
 [treat this as either a note or flag.]
 ```
 

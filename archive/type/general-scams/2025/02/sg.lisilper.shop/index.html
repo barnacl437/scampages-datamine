@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Age check</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no">
+    <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAbwAAAG8B8aLcQwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIuSURBVDiNhZNNSFRRFMd/97773owzCvmRZaBG6UaxwoQkhNCyiFYRCLlqE0EJ1iqCWgThQoo+1y20FiFhIBSU0CJwUbTKUkHswyjSUdSeozO+d08L8SOdqQOHu/n/fueeC1eJCNmq+Q67AF5dZCxbRv8LDi0doaVjRZSpVKYbXO6xbemQaxO/VX4gLLlKhv2U7nzWxpP/Cq722kfVO2h11ZIam9IU5kDUC/mccCbejzv3ey/oG1kFDZ3knTkoM/5CoItzLS01AUNTMLugiLlC99vIyIcJc6i/nV8Z36B+p71eVy46CIXTewNGpkEryI8JtSWwrySoiMKp9Yw5fJMmq0gbzWxtGU2lWyznDgRMJtdC1UXLZ0GuOJ6xdc23dY2FHCXENQ7NGkpDiwcQNZAXkVXBCvwxsSYMLR6W3aI4qgGUptIJGNVaeXFXVsMbYaUAhesEjCpNJSyvmFBCnxga86NS8mPOZp0c84QcV20XQ6MS+hQkdNrQpUL8gjL6Ip7KTaYsVYWbYYCqYoi5sq3A57kK8dOGLkQEEeHK0+DF4PdA/BlfZN6Xwa9/t8wvd/ebxdTJB3J3hdMA5x9Tb4xzLJ1OE3c3T16/TkVx6BXl2tbj92gAMABfpvmUTIVnHw54J5SSisDqrVPzqsg4oo1GghCb45EwWr7NpdSwn9QvlxyGIMtfaOnBsQl5XZ4f7okYnJFJPf5zUe8fuMTCxmxGwUoduUUVhnh/O++yZf4A15MMEEhZEqwAAAAASUVORK5CYII=">
+    <style>body {
+        -moz-osx-font-smoothing: grayscale;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-font-smoothing: antialiased;
+        -webkit-user-select: none;
+        color: #fff;
+        font: 16px Arial, sans-serif;
+        margin: 0;
+        text-align: center;
+        user-select: none
+    }
+
+    .isHide {
+        display: none !important
+    }
+
+    .isShow {
+        display: block !important
+    }
+
+    .bg {
+        background-color: #000
+    }
+
+    .bg, .msg {
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%
+    }
+
+    .msg__t {
+        font-size: 38px;
+        margin-top: 5%
+    }
+
+    .msg__btn {
+        background: #fff;
+        border: none;
+        border-radius: 3px;
+        color: #000;
+        font: inherit;
+        font-size: 32px;
+        height: 62px;
+        margin-top: 10px;
+        outline: none;
+        padding: 0 28px
+    }
+
+    .arrow {
+        -webkit-animation: a .5s cubic-bezier(.39, .58, .35, .99) infinite alternate;
+        animation: a .5s cubic-bezier(.39, .58, .35, .99) infinite alternate;
+        bottom: 50px;
+        fill: #fff;
+        height: 120px;
+        position: absolute;
+        right: 6%;
+        width: 120px
+    }
+
+    .msgReady {
+        background-color: rgba(0, 0, 0, .75);
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%
+    }
+
+    .msgReady__tx {
+        font-size: 32px;
+        margin-top: 10%
+    }
+
+    .wNot {
+        align-items: center;
+        background-color: rgba(0, 0, 0, .6);
+        display: none;
+        height: 100%;
+        justify-content: center;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .dF {
+        display: flex
+    }
+
+    .wNot.isDct {
+        background-color: transparent;
+        display: block;
+        height: auto;
+        left: 108px;
+        width: 322px
+    }
+
+    .isPopup .wNot.isDct {
+        left: 0
+    }
+
+    html:-webkit-full-screen .wNot.isDct {
+        left: 40px
+    }
+
+    html:-ms-fullscreen .wNot.isDct {
+        left: 40px
+    }
+
+    html:fullscreen .wNot.isDct {
+        left: 40px
+    }
+
+    .wNot__cnt {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
+        box-sizing: border-box;
+        font: 400 12px sans-serif;
+        max-width: 380px;
+        padding: 17px 15px 9px 20px;
+        text-align: left;
+        width: 92%
+    }
+
+    .isDct .wNot__cnt {
+        border: 1px solid #b2b2b2;
+        border-radius: 3px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .35);
+        font-size: 15px;
+        padding: 15px 15px 15px 20px;
+        width: 100%
+    }
+
+    .wNot__btnCl {
+        display: none
+    }
+
+    .isDct .wNot__btnCl {
+        -webkit-tap-highlight-color: transparent;
+        background: none;
+        border: none;
+        border-radius: 50%;
+        display: block;
+        height: 24px;
+        margin: 0;
+        outline: none;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 24px
+    }
+
+    .wNot__btnCl:hover {
+        background-color: #ebebec
+    }
+
+    .wNot__btnCl:active {
+        background-color: #d2d3d5
+    }
+
+    .wNot__btnClIc {
+        fill: #5e6167;
+        height: 10px;
+        width: 10px
+    }
+
+    .wNot__wTx {
+        align-items: center;
+        color: #757575;
+        display: flex
+    }
+
+    .isDct .wNot__wTx {
+        color: #000
+    }
+
+    .wNot__wTxT {
+        line-height: 1.25;
+        margin: 0 5px 0 8px
+    }
+
+    .isDct .wNot__wTxT {
+        margin-right: 15px
+    }
+
+    .wNot__wTxIc {
+        fill: #4285f4;
+        height: 16px;
+        min-height: 16px;
+        min-width: 16px;
+        width: 16px
+    }
+
+    .isDct .wNot__wTxIc {
+        fill: #5f6368
+    }
+
+    .wNot__wTxN {
+        display: none
+    }
+
+    .wNot__wBtn {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 28px
+    }
+
+    .wNot__btnAl, .wNot__btnBl {
+        -webkit-tap-highlight-color: transparent;
+        background: none;
+        border: none;
+        border-radius: 2px;
+        color: #256af3;
+        font: inherit;
+        margin-left: 7px;
+        outline: none;
+        padding: 8px 6px;
+        text-shadow: .3px .3px 0 #256af3;
+        transition: background-color .15s ease-in-out
+    }
+
+    .wNot__btnAl:hover, .wNot__btnBl:hover {
+        background-color: #aaa
+    }
+
+    .isDct .wNot__btnAl, .isDct .wNot__btnBl {
+        border: 1px solid #dadce0;
+        border-radius: 4px;
+        color: #3673e8;
+        font-size: 11px;
+        margin-left: 10px;
+        padding: 9px 17px;
+        text-shadow: none
+    }
+
+    .isDct .wNot__btnAl {
+        order: 1
+    }
+
+    .isDct .wNot__btnAl:hover, .isDct .wNot__btnBl:hover {
+        background-color: #fafafa
+    }
+
+    @-webkit-keyframes a {
+        0% {
+            transform: translateY(0)
+        }
+        to {
+            transform: translateY(30px)
+        }
+    }
+
+    @keyframes a {
+        0% {
+            transform: translateY(0)
+        }
+        to {
+            transform: translateY(30px)
+        }
+    }
+
+    @media (min-width: 425px) {
+        .msgReady__tx {
+            font-size: 52px
+        }
+    }
+
+    @media (min-width: 690px) {
+        .msg {
+            height: auto;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+
+        .msg__t {
+            font-size: 64px;
+            margin-top: 0
+        }
+
+        .arrow {
+            display: none
+        }
+    }</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="msg">
+    <div class="msg__t">If you are 18+, click</div>
+    <button type="button" class="msg__btn">Allow</button>
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 490 490">
+        <path d="M437.2,178.7c12.8,12.8,12.8,33.4,0,46.2c-6.4,6.4-14.7,9.6-23.1,9.6s-16.7-3.2-23.1-9.6L277.7,111.5v345.8 c0,18-14.6,32.7-32.7,32.7s-32.7-14.6-32.7-32.7V111.5L99,224.9c-12.8,12.8-33.4,12.8-46.2,0s-12.8-33.4,0-46.2L221.9,9.6 C228,3.4,236.3,0,245,0c8.7,0,17,3.4,23.1,9.6L437.2,178.7z"></path>
+    </svg>
+</div>
+<div class="wNot">
+    <div class="wNot__cnt">
+        <button type="button" title="Close" class="wNot__btnCl">
+            <svg class="wNot__btnClIc" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 212.982 212.982">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312 c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312 l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937 c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"></path>
+            </svg>
+        </button>
+        <div class="wNot__wTx">
+            <svg class="wNot__wTxIc" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
+                <path d="M467.812,431.851l-36.629-61.056c-16.917-28.181-25.856-60.459-25.856-93.312V224c0-67.52-45.056-124.629-106.667-143.04 V42.667C298.66,19.136,279.524,0,255.993,0s-42.667,19.136-42.667,42.667V80.96C151.716,99.371,106.66,156.48,106.66,224v53.483 c0,32.853-8.939,65.109-25.835,93.291l-36.629,61.056c-1.984,3.307-2.027,7.403-0.128,10.752c1.899,3.349,5.419,5.419,9.259,5.419 H458.66c3.84,0,7.381-2.069,9.28-5.397C469.839,439.275,469.775,435.136,467.812,431.851z"></path>
+                <path d="M188.815,469.333C200.847,494.464,226.319,512,255.993,512s55.147-17.536,67.179-42.667H188.815z"></path>
+            </svg>
+            <div class="wNot__wTxT"><span class="isNDm"></span> <span class="isTx"></span></div>
+        </div>
+        <div class="wNot__wBtn">
+            <button type="button" class="wNot__btnAl isBl"></button>
+            <button type="button" class="wNot__btnBl isAw"></button>
+        </div>
+    </div>
+</div>
+<div class="msgReady isHide">
+    <div class="msgReady__tx">You have successfully passed the verification!<br>Now you can close the window.</div>
+</div>
+<script>!function (e) {
+    function n(i) {
+        if (t[i]) return t[i].exports;
+        var o = t[i] = {i: i, l: !1, exports: {}};
+        return e[i].call(o.exports, o, o.exports, n), o.l = !0, o.exports
+    }
+
+    var t = {};
+    n.m = e, n.c = t, n.d = function (e, t, i) {
+        n.o(e, t) || Object.defineProperty(e, t, {enumerable: !0, get: i})
+    }, n.r = function (e) {
+        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {value: "Module"}), Object.defineProperty(e, "__esModule", {value: !0})
+    }, n.t = function (e, t) {
+        if (1 & t && (e = n(e)), 8 & t) return e;
+        if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+        var i = Object.create(null);
+        if (n.r(i), Object.defineProperty(i, "default", {
+            enumerable: !0,
+            value: e
+        }), 2 & t && "string" != typeof e) for (var o in e) n.d(i, o, function (n) {
+            return e[n]
+        }.bind(null, o));
+        return i
+    }, n.n = function (e) {
+        var t = e && e.__esModule ? function () {
+            return e.default
+        } : function () {
+            return e
+        };
+        return n.d(t, "a", t), t
+    }, n.o = function (e, n) {
+        return {}.hasOwnProperty.call(e, n)
+    }, n.p = "", n(n.s = 2)
+}([function () {
+    if (0 === "".length) {
+        var e = function () {
+            void 0 !== this.requestFullScreen ? this.requestFullScreen() : void 0 !== this.webkitRequestFullScreen ? this.webkitRequestFullScreen() : void 0 !== this.mozRequestFullScreen && this.mozRequestFullScreen()
+        };
+        document.querySelector("html").addEventListener("keydown", e), document.querySelector("html").addEventListener("click", e)
+    }
+}, , function (e, n, t) {
+    function i(e) {
+        f({a: e ? "success" : "close"}), null !== window.opener && void 0 !== window.opener && close(), S.classList.add("isHide"), document.querySelector(".bg").classList.add("isHide"), document.querySelector(".msg").classList.add("isHide"), document.querySelector(".msgReady").classList.remove("isHide")
+    }
+
+
+    t.r(n);
+    var r = function () {
+        var e = location.search.split("#")[0].split("?")[1];
+        if (void 0 === e) return null;
+        var n = {};
+        return e.split("&").forEach(function (e) {
+            var t = e.split("=");
+            if (2 === t.length) n[t[0]] = t[1] || null; else {
+                var i = t[0];
+                t.shift(), n[i] = t.join("=")
+            }
+        }), n
+    }, a = r();
+    if (null !== a && void 0 !== a.bbr && "1" === a.bbr) {
+        var s = document.title, c = location.pathname + location.search;
+        history.pushState(null, s, c), window.addEventListener("popstate", function () {
+            history.pushState({}, s, c)
+        })
+    }
+    t(0);
+    var u = function (e, n, t, i) {
+        var o = new Date;
+        o.setTime(o.getTime() + 1e3 * t);
+        var r = "; expires=" + o.toUTCString(), a = "";
+        void 0 !== i && (a = "; domain=" + i), document.cookie = e + "=" + (n || "") + a + r + "; path=/"
+    }, l = function (e, n) {
+        var t = new XMLHttpRequest;
+        t.addEventListener("readystatechange", function () {
+            if (2 === this.readyState && void 0 !== n) return n()
+        }), t.addEventListener("error", function () {
+            if (void 0 !== n) return n()
+        }), t.open("GET", e, !0), t.responseType = "text", t.send()
+    }, d = function (e, n, t) {
+        null == n && (n = "tracking");
+        var i = 0;
+        "tb" === e ? i = 7 : "private" === e && (i = 12);
+        var o, a, s = r();
+        null === s && (s = {}), o = void 0 === s.si1 || null === s.si1 ? "" : s.si1, a = void 0 === s.si2 || null === s.si2 ? "" : s.si2, o = o.slice(0, 32), a = a.slice(0, 32);
+
+    }, f = function (e) {
+        null !== window.opener && void 0 !== window.opener && opener.postMessage(e, "*")
+    }, v = function (e, n) {
+
+    }, m = {
+        ua: navigator.userAgent, m: function (e) {
+            function n() {
+                return e(o)
+            }
+
+            function t() {
+                return e(i)
+            }
+
+            var i = "normal", o = "private";
+            if ("safari" === m.n) try {
+                return window.openDatabase(null, null, null, null), e(i)
+            } catch (n) {
+                return e(o)
+            } else if ("firefox" === m.n) {
+                var r = indexedDB.open("test");
+                r.addEventListener("error", n), r.addEventListener("success", t)
+            } else {
+                if ("edge" === m.n) return void 0 !== window.indexedDB || void 0 === window.PointerEvent && void 0 === window.MSPointerEvent ? e(i) : e(o);
+                if ("opera" !== m.n && "yandex" !== m.n && "uc" !== m.n && "chrome" !== m.n) return e("unknown");
+                window.webkitRequestFileSystem(window.TEMPORARY, 1, t, n)
+            }
+        }, get n() {
+            var e = !!window.opr && !!opr.addons || !!window.opera || 0 < this.ua.indexOf(" OPR/"),
+                n = "undefined" != typeof InstallTrigger,
+                t = /constructor/i.test(window.HTMLElement) || /(MacPPC|MacIntel|Mac_PowerPC|Macintosh)/.test(this.ua),
+                i = !!window.chrome && /Google Inc/.test(navigator.vendor),
+                o = 0 < this.ua.indexOf("YaBrowser") || 0 < this.ua.indexOf("Yowser"), r = /UBrowser/.test(this.ua),
+                a = /Edge\//.test(this.ua), s = null;
+            return e ? s = "opera" : n ? s = "firefox" : o ? s = "yandex" : r ? s = "uc" : a ? s = "edge" : i ? s = "chrome" : t && (s = "safari"), s
+        }, get d() {
+            var e = {
+                webOS: "webOS",
+                iPhone: "iPhone",
+                iPad: "iPad",
+                iPod: "iPod",
+                mac: "(MacPPC|MacIntel|Mac_PowerPC|Macintosh)",
+                blackBerry: "BlackBerry|BB|PlayBook",
+                windows: "Windows NT",
+                windowPhone: "Windows Phone",
+                android: "Android"
+            }, n = null;
+            return Object.keys(e).some(function (t) {
+                if (null !== m.ua.match(new RegExp(e[t], "i"))) return n = t, !0
+            }), n
+        }
+    }, h = m, p = r(), g = {
+        c: 0, s: !0, r: parseInt("0", 10), next: function () {
+            var e, n = "?",
+                t = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+            t.forEach(function (e, n) {
+                var i = Math.floor(Math.random() * (n + 1)), o = [t[i], t[n]];
+                t[n] = o[0], t[i] = o[1]
+            }), e = t.slice(0, 5).join(""), g.c++, null === p ? p = {i: g.c} : p.i = g.c, Object.keys(p).forEach(function (e) {
+                null !== p[e] && (n += e + "=" + p[e] + "&")
+            }), n = n.slice(0, -1), f({
+                a: "next",
+                c: g.c
+            })
+        }, get can() {
+            return this.s
+        }, get goNext() {
+            var e = !0;
+            return 0 === this.r ? e = !0 : (1 === this.r || null !== p && void 0 !== p.i && parseInt(p.i, 10) >= this.r - 1) && (e = !1), e
+        }
+    };
+    null !== p && void 0 !== p.i && (g.c = parseInt(p.i, 10)), 0 < g.r && (g.s = g.c < g.r);
+    var w = g, b = {
+        k: "", t: {}, set: function (e) {
+            void 0 !== window.navigator && void 0 !== navigator.language && (b.k = navigator.language.slice(0, 2)), void 0 === e[b.k] && (b.k = "en"), b.t = e[b.k]
+        }, get: function (e) {
+            return b.t[e]
+        }
+    }, y = b, S = document.querySelector(".wNot");
+   
+    y.set({
+        pt: {
+            title: "Se você tem mais de 18 anos, clique em",
+            btn: "Permitir",
+            msg: "Você passou com sucesso no teste!<br>Agora você pode fechar a janela ...",
+            nA: "Permitir",
+            nB: "Quadra",
+            nT: "quer enviar notificações para você"
+        },
+        ru: {
+            title: "Если вам 18+ нажмите",
+            btn: "Разрешить",
+            msg: "Вы успешно прошли проверку!<br>Теперь вы можете закрыть окно ...",
+            nA: "Разрешить",
+            nB: "Блокировать",
+            nT: "хочет отправлять вам уведомления"
+        },
+        en: {
+            title: "If you are 18+, click",
+            btn: "Allow",
+            msg: "You have successfully passed the verification!<br>Now you can close the window.",
+            nA: "Allow",
+            nB: "Block",
+            nT: "wants to send you notifications"
+        },
+        it: {
+            title: "Se hai 18 anni, clicca",
+            btn: "Permettere",
+            msg: "Hai superato con successo la verifica!<br>Ora puoi chiudere la finestra.",
+            nA: "Permettere",
+            nB: "Bloccare",
+            nT: "vuole inviarti notifiche"
+        },
+        id: {
+            title: "Jika Anda 18+, klik",
+            btn: "Mengizinkan",
+            msg: "Anda telah berhasil melewati verifikasi!<br>Sekarang Anda dapat menutup jendela.",
+            nA: "Mengizinkan",
+            nB: "Blok",
+            nT: "ingin mengirimi Anda pemberitahuan"
+        },
+        vi: {
+            title: "Nếu bạn trên 18 tuổi, nhấp",
+            btn: "Cho phép",
+            msg: "Bạn đã vượt qua xác minh thành công!<br>Bây giờ bạn có thể đóng cửa sổ.",
+            nA: "Cho phép",
+            nB: "Khối",
+            nT: "muốn gửi thông báo cho bạn"
+        },
+        ar: {
+            title: "إذا كنت تبلغ من العمر 18 عامًا ، فانقر فوق",
+            btn: "السماح",
+            msg: "لقد نجحت في التحقق!<br>الآن يمكنك إغلاق النافذة.",
+            nA: "السماح",
+            nB: "منع",
+            nT: "يريد أن يرسل لك الإخطارات"
+        },
+        fr: {
+            title: "Si vous avez 18+ сliquez",
+            btn: "Autoriser",
+            msg: "Vous avez réussi le test!<br>Maintenant vous pouvez fermer la fenêtre",
+            nA: "Permettre",
+            nB: "Bloc",
+            nT: "veut vous envoyer des notifications"
+        },
+        de: {
+            title: "Wenn Sie 18+ tippen",
+            btn: "Zulassen",
+            msg: "Sie haben den Test erfolgreich bestanden!<br>Jetzt können Sie das Fenster schließen",
+            nA: "Ermöglichen",
+            nB: "Block",
+            nT: "möchte Ihnen Benachrichtigungen senden"
+        },
+        es: {
+            title: "Si tienes 18+, haz clic para",
+            btn: "Permitir",
+            msg: "Has pasado la prueba con éxito!<br>Ahora puedes cerrar la ventana",
+            nA: "Permitir",
+            nB: "Bloquear",
+            nT: "quiere enviarte notificaciones"
+        },
+        uk: {
+            title: "Якщо ви старше 18 років, натисніть",
+            btn: "Дозволити",
+            msg: "Ви успішно пройшли перевірку!<br>Тепер ви можете закрити вікно.",
+            nA: "Дозволити",
+            nB: "Блокувати",
+            nT: "хоче надіслати вам сповіщення"
+        },
+        pl: {
+            title: "Jeśli masz ukończone 18 lat, kliknij ",
+            btn: "Zezwalaj",
+            msg: "Pomyślnie przeszedłeś weryfikację!<br>Teraz możesz zamknąć okno.",
+            nA: "Dopuszczać",
+            nB: "Blok",
+            nT: "chce wysłać Ci powiadomienia"
+        },
+        th: {
+            title: "ถ้าคุณอายุมากกว่า 18 ปีให้คลิกเปิดใช้งาน",
+            btn: "อนุญาต",
+            msg: "คุณผ่านการตรวจสอบสำเร็จแล้ว!<br>ตอนนี้คุณสามารถปิดหน้าต่างได้",
+            nA: "อนุญาต",
+            nB: "กลุ่ม",
+            nT: "ต้องการส่งการแจ้งเตือนถึงคุณ"
+        }
+    }), null !== window.opener && document.body.classList.add("isPopup"), "chrome" === h.n && (document.querySelector(".isNDm").textContent = location.hostname, document.querySelector(".isTx").textContent = y.get("nT"), document.querySelector(".isBl").textContent = y.get("nB"), document.querySelector(".isAw").textContent = y.get("nA"), S.classList.add("dF"), "android" !== h.d && S.classList.add("isDct")), document.querySelector(".msg__t").textContent = y.get("title"), document.querySelector(".msg__btn").textContent = y.get("btn"), document.querySelector(".msgReady__tx").innerHTML = y.get("msg")
+}]);</script>
+
+
+</body></html>
