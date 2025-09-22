@@ -1,3 +1,6 @@
+> [!NOTE]
+> This project is now largely unmaintained. However, while leaving this repo as-is, I will at some point plan for my future study, and this effort will probably be involved in, as I have more time. I will usually not accept pull reqs for now.
+
 # scampages-datamine
 my early effort on scraping and archiving scam, fake or disguising websites, especially those regarding attempts to scam via discord or steam $50 gift thingy lel
 > [!NOTE]  
