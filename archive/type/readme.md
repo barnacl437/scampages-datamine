@@ -5,6 +5,14 @@ If you are contributing to this, you can add a folder with service domain name i
 
 Please preserve the website structure as-is, for instance, if the scammer put their main working site, i.e. the site that is used mainly for frauding user to type their information in, at `example.com/discount/abc/def/login.html`, just create each folder until it looks right. Usually all the other locations in the scam webserver might not be used at all, and may throw you 404, then either would reveal the tool used for hosting, such as apache3 or nginx (which is funny to watch btw). 
 
+*psst*: instead of manually saving html pages using ctrl-c or inspection mode (that legacy, unreliable way), you can use the following wget command to extract the full website into a local directory:
+
+```sh
+wget --mirror --convert-links --adjust-extension --page-requisites --no-parent <URL_OF_WEBSITE>
+```
+
+this should make a full mirroring from the host/target location right to the working directory (or a custom directory if you have specified one).
+
 It's perhaps a good practice to check them out, but please do so, and the rest as well, in a safety-first manner: open anything unsafe in browsers' private/incognito mode. NEVER PROVIDE SENSITIVE DATA TO SUCH WEBSITES. If you don't know anything about saving or are dreaded of your belongings being exposed, better just look around.
 
 Upload it directly (if you have rights) or you can fork and make pull requests to this repo. Complying to all of these will ensure this repo be properly managed and will make it more useful for people looking around.
