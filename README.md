@@ -24,6 +24,7 @@ Then right click an item and there are some save to file options. You can choose
 
 psst: ctrl-s is the faster way, though it doesn't always ensure the enough-ness.
 
+psst 2: ok now please *don't* do that lmao, follow the guide [here](https://github.com/barnacl437/scampages-datamine/blob/main/archive/type/readme.md), it will tell you how to properly dump a website's contents using wget command.
 
 ### ...anything else?
 There are various scam shits around on the interwebz. I am still trying to detect and scraping their contents thru many sources, commonly via discord chats or steam pm where some jerks asked me to vote for their team on match.tf lol. 
