@@ -5,7 +5,7 @@
 my early effort on scraping and archiving scam, fake or disguising websites, especially those regarding attempts to scam via discord or steam $50 gift thingy lel
 > [!NOTE]  
 > This repository is made for educational purposes and (somewhat) taking part in raising people's aware about internet scamming methods.
-> You can learn what's inside and freely distribute non-copyrights materials. This repo, ditto however, may in some chances has copyrighted materials that belong to their respective owners. I am neither responsible nor relating to anything regarding creation of these materials. Caveat emptor.
+> You can learn what's inside and freely distribute non-copyrights materials. This repo, ditto however, may in some chances has copyrighted materials that belong to their respective owners. I am neither responsible nor relating to anything regarding creation of these materials. Caveat.
 >
 >  **Do not** use this for further scamming attempts. Your actions shall be ruining people's life, therefore if you are thinking about doing so, the world will tell you to halt.
 > Also, you should *never* be fallen for these scams and remember to stay safe when browsing online.
